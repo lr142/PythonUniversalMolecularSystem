@@ -1,0 +1,24 @@
+include "system.in.init"
+read_data "system.data"
+include "system.in.settings"
+
+
+thermo_style custom step temp pe etotal press lx ly lz time
+thermo 1000
+
+
+velocity all create 300.0 134113
+
+
+fix  fxnvt all nvt temp 300.0 300.0 100.0
+timestep 0.001
+run  1000
+write_data relaxed.data
+unfix fxnvt
+
+reset_timestep 0
+timestep 1
+fix  fxnvt all nvt temp 300.0 300.0 100.0
+dump d1 all custom 1000 system.lammpstrj id mol type x y z vx vy vz
+run  100000
+write_data final.data

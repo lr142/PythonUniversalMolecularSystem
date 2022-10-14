@@ -1,0 +1,22 @@
+FUNCTIONAL{
+# 力场的函数形式。在目前的实现中，这里的字段会被原封不动地复制到LAMMPS程序的输入文件中，故它们需符合LAMMPS格式，
+    units metal
+    atom_style full
+    #bond_style harmonic
+    #angle_style harmonic
+    #dihedral_style opls
+    #improper_style harmonic
+    pair_style eam
+}
+
+ATOMS {
+# 每一行代表一个原子种类
+# 各关键字依次是 种类名称 成键时使用的种类名称 质量 电荷
+# 其中设置"成键时使用的种类名称"是因为在某些力场中，几种不同类型的原子可以形成同种类型的键。
+# 如果没有这种要求，该字段填"--"，程序会直接用原子种类名作为成键时使用的种类名。
+    Cu    --       63.546  0.00
+}
+
+PAIRWISE {
+    pair_coeff Cu Cu Cu_u6.eam
+}

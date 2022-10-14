@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="latin1"?>
+<!DOCTYPE XSD []>
+<XSD Version="17.2" WrittenBy="Materials Studio 17.2">
+	<AtomisticTreeRoot ID="1" NumProperties="62" HasProperties="1" NumChildren="1">
+		<Property Name="AngleAxisType" DefinedOn="AngleBetweenPlanesBender" Type="Enumerated"/>
+		<Property Name="AngleEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="BeadDocumentID" DefinedOn="MesoMoleculeSet" Type="String"/>
+		<Property Name="BendBendEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="BendTorsionBendEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="BondEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="EFGAsymmetry" DefinedOn="Atom" Type="Double"/>
+		<Property Name="EFGQuadrupolarCoupling" DefinedOn="Atom" Type="Double"/>
+		<Property Name="ElectrostaticEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="FaceMillerIndex" DefinedOn="GrowthFace" Type="MillerIndex"/>
+		<Property Name="FacetTransparency" DefinedOn="GrowthFace" Type="Float"/>
+		<Property Name="FermiLevel" DefinedOn="ScalarFieldBase" Type="Double"/>
+		<Property Name="Force" DefinedOn="Matter" Type="CoDirection"/>
+		<Property Name="FrameFilter" DefinedOn="Trajectory" Type="String"/>
+		<Property Name="HarmonicForceConstant" DefinedOn="HarmonicRestraint" Type="Double"/>
+		<Property Name="HarmonicMinimum" DefinedOn="HarmonicRestraint" Type="Double"/>
+		<Property Name="HydrogenBondEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="ImportOrder" DefinedOn="Bondable" Type="UnsignedInteger"/>
+		<Property Name="InversionEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="IsBackboneAtom" DefinedOn="Atom" Type="Boolean"/>
+		<Property Name="IsChiralCenter" DefinedOn="Atom" Type="Boolean"/>
+		<Property Name="IsOutOfPlane" DefinedOn="Atom" Type="Boolean"/>
+		<Property Name="IsRepeatArrowVisible" DefinedOn="ElectrodeWire" Type="Boolean"/>
+		<Property Name="KineticEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="LineExtentPadding" DefinedOn="BestFitLineMonitor" Type="Double"/>
+		<Property Name="LinkageGroupName" DefinedOn="Linkage" Type="String"/>
+		<Property Name="ListIdentifier" DefinedOn="PropertyList" Type="String"/>
+		<Property Name="NMRShielding" DefinedOn="Atom" Type="Double"/>
+		<Property Name="NonBondEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="NormalMode" DefinedOn="Bondable" Type="Direction"/>
+		<Property Name="NormalModeFrequency" DefinedOn="Bondable" Type="Double"/>
+		<Property Name="NumScanSteps" DefinedOn="LinearScan" Type="UnsignedInteger"/>
+		<Property Name="OrbitalCutoffRadius" DefinedOn="Bondable" Type="Double"/>
+		<Property Name="PlaneExtentPadding" DefinedOn="BestFitPlaneMonitor" Type="Double"/>
+		<Property Name="PotentialEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="QuantizationValue" DefinedOn="ScalarFieldBase" Type="Double"/>
+		<Property Name="RelativeVelocity" DefinedOn="Matter" Type="Direction"/>
+		<Property Name="RepeatArrowScale" DefinedOn="ElectrodeWire" Type="Float"/>
+		<Property Name="RestraintEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="ScanEnd" DefinedOn="LinearScan" Type="Double"/>
+		<Property Name="ScanStart" DefinedOn="LinearScan" Type="Double"/>
+		<Property Name="SeparatedStretchStretchEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="ServerDipoleMoment" DefinedOn="MatterGroupProperties" Type="Direction"/>
+		<Property Name="SimulationStep" DefinedOn="Trajectory" Type="Integer"/>
+		<Property Name="SpinQuantizationDirection" DefinedOn="Atom" Type="Direction"/>
+		<Property Name="Stiffness" DefinedOn="SymmetryMatterHessian" Type="Matrix6x6"/>
+		<Property Name="StretchBendStretchEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="StretchStretchEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="StretchTorsionStretchEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="Temperature" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="ThreeBodyNonBondEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="TorsionBendBendEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="TorsionEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="TorsionStretchEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="TotalEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="Units" DefinedOn="ScalarFieldBase" Type="String"/>
+		<Property Name="ValenceCrossTermEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="ValenceDiagonalEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="VanDerWaalsEnergy" DefinedOn="ClassicalEnergyHolder" Type="Double"/>
+		<Property Name="_ServerAtomNames" DefinedOn="IndexProvider" Type="String"/>
+		<Property Name="_Stress" DefinedOn="MatterSymmetrySystem" Type="Matrix"/>
+		<Property Name="_TrajectoryStress" DefinedOn="MatterSymmetrySystem" Type="Matrix"/>
+		<Properties TotalEnergy="57.5376379818487" PotentialEnergy="57.5376379818487" ValenceDiagonalEnergy="27.6189464211241" BondEnergy="11.7545392466879" AngleEnergy="13.0036417277769" TorsionEnergy="2.8511959376981" InversionEnergy="0.00956950896118425" ValenceCrossTermEnergy="0" StretchStretchEnergy="0" StretchBendStretchEnergy="0" StretchTorsionStretchEnergy="0" SeparatedStretchStretchEnergy="0" TorsionStretchEnergy="0" BendBendEnergy="0" TorsionBendBendEnergy="0" BendTorsionBendEnergy="0" NonBondEnergy="29.9186915607246" HydrogenBondEnergy="0" VanDerWaalsEnergy="29.9186915607246" ElectrostaticEnergy="0" RestraintEnergy="0" ThreeBodyNonBondEnergy="0"/>
+		<Molecule ID="2" NumChildren="1" Name="2022.03.01.Globular.Polymers/PolyAM">
+			<LinearChain ID="3" NumChildren="19" Name="2022.03.01.Globular.Polymers/PolyAM" Type="Homo Polymer">
+				<RepeatUnit ID="4" NumChildren="21" FlipProbability="0" ChiralInversionProbability="0">
+					<Atom3d ID="5" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-5.18332185016366,3.52163201937177,-0.927753364120957" Connections="6,7,8,9" ForcefieldType="C_3" Components="C" Color="255,0,255,255">
+						<Properties IsBackboneAtom="1" IsChiralCenter="0" Force="-0.00238256016070881,0.00670440747103684,0.00349017277333508"/>
+					</Atom3d>
+					<Atom3d ID="10" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-3.75595749726043,3.91573484998771,-1.33938491291073" Connections="6,11,12,13" ForcefieldType="C_3" Components="C" Color="255,0,255,255">
+						<Properties IsBackboneAtom="1" IsChiralCenter="1" Force="-0.00392940663574404,0.0095556816199367,-0.000366550582588387"/>
+					</Atom3d>
+					<Atom3d ID="14" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-5.75373349032655,3.18581747627777,-1.82067468048042" Connections="7" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.00233563900021427,0.00288676826742762,0.00391857804157102"/>
+					</Atom3d>
+					<Atom3d ID="15" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-5.1099222959681,2.65521902489422,-0.238084338785757" Connections="8" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.00200006248791262,0.00211538306965586,-0.00243189182231429"/>
+					</Atom3d>
+					<Atom3d ID="16" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-3.02645624905351,2.74683588436078,-1.9381586353095" Connections="11,17,18" ForcefieldType="C_R" Components="C" Color="130,130,130,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.00143802313332131,-0.0122404845828346,-0.000948249958722336"/>
+					</Atom3d>
+					<Atom3d ID="19" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-3.20483497218573,4.27932723875572,-0.443891459017762" Connections="12" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="1" IsChiralCenter="0" Force="-0.00228136517136956,0.00327411656782362,-0.00100276358967888"/>
+					</Atom3d>
+					<Atom3d ID="20" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-3.78003227375018,4.73900127853269,-2.08497546659039" Connections="13" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.000474053853036338,-0.00659112351882818,-0.01066481677025"/>
+					</Atom3d>
+					<Atom3d ID="21" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-3.40759800717462,2.23441003561944,-3.14304481718687" Connections="17,22,23" ForcefieldType="N_R" Components="N" Color="0,0,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.00372693194867102,0.0251734457109372,-0.00518684181985707"/>
+					</Atom3d>
+					<Atom3d ID="24" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-2.07846594199804,2.25924245685471,-1.34667281224692" Connections="18" ForcefieldType="O_2" Components="O" Color="255,0,0,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.0128078551051383,-0.00502219252771363,0.000255985322149099"/>
+					</Atom3d>
+					<Atom3d ID="25" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-2.89946128082197,1.42229781754742,-3.55967783827858" Connections="22" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.006049486811188,-0.0192813645746852,0.0230585658029328"/>
+					</Atom3d>
+					<Atom3d ID="26" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-4.20465885637076,2.65019833493675,-3.67460068932783" Connections="23" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.00715367112536759,0.000504889510499096,0.00252791746188707"/>
+					</Atom3d>
+					<Bond ID="6" Connects="5,10" Order="1"/>
+					<Bond ID="7" Connects="5,14" Order="1"/>
+					<Bond ID="8" Connects="5,15" Order="1"/>
+					<Bond ID="11" Connects="10,16" Order="1"/>
+					<Bond ID="12" Connects="10,19" Order="1"/>
+					<Bond ID="13" Connects="10,20" Order="1"/>
+					<Bond ID="17" Connects="16,21" Order="1.41"/>
+					<Bond ID="18" Connects="16,24" Type="Double" Order="2"/>
+					<Bond ID="22" Connects="21,25" Order="1"/>
+					<Bond ID="23" Connects="21,26" Order="1"/>
+				</RepeatUnit>
+				<RepeatUnit ID="27" NumChildren="19" FlipProbability="0" ChiralInversionProbability="0">
+					<Atom3d ID="28" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-7.32347362882349,4.23575991181486,0.291981481429435" Connections="29,30,31,32" ForcefieldType="C_3" Components="C" Color="255,0,255,255">
+						<Properties IsBackboneAtom="1" IsChiralCenter="0" Force="-0.00365935530671013,0.00434751827591917,0.00253167088486972"/>
+					</Atom3d>
+					<Atom3d ID="33" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-5.93254349809775,4.68133334046663,-0.227461860349429" Connections="29,34,35,9" ForcefieldType="C_3" Components="C" Color="255,0,255,255">
+						<Properties IsBackboneAtom="1" IsChiralCenter="1" Force="0.000492438240363491,0.00142826562594256,-0.00238683149733077"/>
+					</Atom3d>
+					<Atom3d ID="36" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-7.9551547615089,5.1331586012779,0.47525443500975" Connections="30" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.00406814465024841,-0.00860501251618478,0.00223602733691664"/>
+					</Atom3d>
+					<Atom3d ID="37" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-7.83351119561377,3.66415541927432,-0.510630175777531" Connections="31" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.00737898892483879,0.00465015149545422,0.00207693118262653"/>
+					</Atom3d>
+					<Atom3d ID="38" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-6.09123612045201,5.86330631719433,-1.16056364764112" Connections="34,39,40" ForcefieldType="C_R" Components="C" Color="130,130,130,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.00235161944516116,-0.00193196439041277,-0.00203973844161953"/>
+					</Atom3d>
+					<Atom3d ID="41" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-5.31981412706735,5.0113181683205,0.640828491373013" Connections="35" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.00309991459148495,0.000259386765170455,-0.00335922983302206"/>
+					</Atom3d>
+					<Atom3d ID="42" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-6.82022454378922,5.76281915261617,-2.31042786970659" Connections="39,43,44" ForcefieldType="N_R" Components="N" Color="0,0,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.0135698295725872,0.0035842944861435,-0.00843360564034779"/>
+					</Atom3d>
+					<Atom3d ID="45" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-5.56028551817895,6.92412439794495,-0.878302386698707" Connections="40" ForcefieldType="O_2" Components="O" Color="255,0,0,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.00232236490164706,-0.00831105965803047,-0.0051290918767207"/>
+					</Atom3d>
+					<Atom3d ID="46" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-6.92103352366613,6.58523128250153,-2.94659919325326" Connections="43" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.0033976296139504,-0.0128271998682005,0.0169188852749382"/>
+					</Atom3d>
+					<Atom3d ID="47" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-7.29428472439843,4.87159439183207,-2.57631743757911" Connections="44" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.0174224128147209,0.00668678813852197,-0.00407636615884144"/>
+					</Atom3d>
+					<Bond ID="29" Connects="28,33" Order="1"/>
+					<Bond ID="30" Connects="28,36" Order="1"/>
+					<Bond ID="31" Connects="28,37" Order="1"/>
+					<Bond ID="34" Connects="33,38" Order="1"/>
+					<Bond ID="35" Connects="33,41" Order="1"/>
+					<Bond ID="39" Connects="38,42" Order="1.41"/>
+					<Bond ID="40" Connects="38,45" Type="Double" Order="2"/>
+					<Bond ID="43" Connects="42,46" Order="1"/>
+					<Bond ID="44" Connects="42,47" Order="1"/>
+				</RepeatUnit>
+				<Bond ID="9" Connects="5,33" Order="1"/>
+				<RepeatUnit ID="48" NumChildren="19" FlipProbability="0" ChiralInversionProbability="0">
+					<Atom3d ID="49" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-8.65552167278093,2.79436690244682,1.93735458375795" Connections="50,51,52,53" ForcefieldType="C_3" Components="C" Color="255,0,255,255">
+						<Properties IsBackboneAtom="1" IsChiralCenter="0" Force="-0.00256123934484798,-0.00398729576201529,-0.00167523989214968"/>
+					</Atom3d>
+					<Atom3d ID="54" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-7.26854242541924,3.39447268623948,1.59575157615945" Connections="50,55,56,32" ForcefieldType="C_3" Components="C" Color="255,0,255,255">
+						<Properties IsBackboneAtom="1" IsChiralCenter="1" Force="0.0107956330993506,0.00758284550296828,0.000748132296792825"/>
+					</Atom3d>
+					<Atom3d ID="57" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-8.70287035729235,2.54544203818273,3.02060695879018" Connections="51" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.000149211540752536,-0.00129107671782518,-0.00341058882193693"/>
+					</Atom3d>
+					<Atom3d ID="58" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-9.42744693364773,3.57474949305899,1.77639274419619" Connections="52" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.00555446211027621,-0.00374102588713321,1.11409217400382e-005"/>
+					</Atom3d>
+					<Atom3d ID="59" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-6.76662742754327,4.22894625532843,2.75515489424247" Connections="55,60,61" ForcefieldType="C_R" Components="C" Color="130,130,130,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.00652232901187677,-0.00165041747166761,0.00322557541241597"/>
+					</Atom3d>
+					<Atom3d ID="62" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-6.55973762536244,2.55229545571735,1.45371015302135" Connections="56" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.00561810827302139,0.00936202783562812,-0.000750825491354856"/>
+					</Atom3d>
+					<Atom3d ID="63" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-7.47119052247641,5.30713877696416,3.20769171561685" Connections="60,64,65" ForcefieldType="N_R" Components="N" Color="0,0,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.0155761170655269,0.0225939116903726,0.00804091976150723"/>
+					</Atom3d>
+					<Atom3d ID="66" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-5.71605102406732,3.92951516037126,3.297079010387" Connections="61" ForcefieldType="O_2" Components="O" Color="255,0,0,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.0216930979737824,-0.001395541503878,-0.00722449699109462"/>
+					</Atom3d>
+					<Atom3d ID="67" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-7.11258520174632,5.87570917285656,4.0073184790158" Connections="64" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.0160438287421263,-0.0303942553158714,-0.0157805602277894"/>
+					</Atom3d>
+					<Atom3d ID="68" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-8.38114875686138,5.5812573826878,2.77581425982339" Connections="65" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.00936675027350486,0.00187542745252545,0.00225036404752332"/>
+					</Atom3d>
+					<Bond ID="50" Connects="49,54" Order="1"/>
+					<Bond ID="51" Connects="49,57" Order="1"/>
+					<Bond ID="52" Connects="49,58" Order="1"/>
+					<Bond ID="55" Connects="54,59" Order="1"/>
+					<Bond ID="56" Connects="54,62" Order="1"/>
+					<Bond ID="60" Connects="59,63" Order="1.41"/>
+					<Bond ID="61" Connects="59,66" Type="Double" Order="2"/>
+					<Bond ID="64" Connects="63,67" Order="1"/>
+					<Bond ID="65" Connects="63,68" Order="1"/>
+				</RepeatUnit>
+				<Bond ID="32" Connects="28,54" Order="1"/>
+				<RepeatUnit ID="69" NumChildren="19" FlipProbability="0" ChiralInversionProbability="0">
+					<Atom3d ID="70" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-10.4964660477122,1.17093588578723,1.18455967882414" Connections="71,72,73,74" ForcefieldType="C_3" Components="C" Color="255,0,255,255">
+						<Properties IsBackboneAtom="1" IsChiralCenter="0" Force="0.000261906140035739,0.000538061822549896,-0.00284554332691123"/>
+					</Atom3d>
+					<Atom3d ID="75" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-8.98783211597087,1.51976531316847,1.11464688221751" Connections="71,76,77,53" ForcefieldType="C_3" Components="C" Color="255,0,255,255">
+						<Properties IsBackboneAtom="1" IsChiralCenter="1" Force="-0.000360191087805717,-0.00266170059788351,0.00392552962298964"/>
+					</Atom3d>
+					<Atom3d ID="78" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-10.6507637040641,0.103984778513807,0.906005785856016" Connections="72" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.00137793285494858,0.00400057615973104,0.00156198237577176"/>
+					</Atom3d>
+					<Atom3d ID="79" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-10.8241572316022,1.27372212660102,2.23851120796499" Connections="73" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.0021812026981336,0.00110750371724677,-0.00273647465886556"/>
+					</Atom3d>
+					<Atom3d ID="80" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-8.15881135653257,0.345350517975285,1.59080802665831" Connections="76,81,82" ForcefieldType="C_R" Components="C" Color="130,130,130,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.0117838870880767,0.0105868586882254,-0.001091312798571"/>
+					</Atom3d>
+					<Atom3d ID="83" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-8.72560727294418,1.69712618575431,0.0512899249100666" Connections="77" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.00544205283545285,-0.00107302598522496,0.00495902701269219"/>
+					</Atom3d>
+					<Atom3d ID="84" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-8.30787840923427,-0.162236102484307,2.84931984103426" Connections="81,85,86" ForcefieldType="N_R" Components="N" Color="0,0,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.0370862819330182,-0.0141046636307891,0.00564254230962291"/>
+					</Atom3d>
+					<Atom3d ID="87" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-7.34611683494988,-0.159120141459558,0.834318372000514" Connections="82" ForcefieldType="O_2" Components="O" Color="255,0,0,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.00266675095439828,0.00419009759480282,-0.00681748703645702"/>
+					</Atom3d>
+					<Atom3d ID="88" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-7.72826562421446,-0.971867662207225,3.1652245752842" Connections="85" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.00341979710426732,0.00768224461704536,-0.00680649272042722"/>
+					</Atom3d>
+					<Atom3d ID="89" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-9.00426491372084,0.236563280564062,3.5168990524501" Connections="86" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.0233446809079487,-0.00243086264009884,0.00169844680343267"/>
+					</Atom3d>
+					<Bond ID="71" Connects="70,75" Order="1"/>
+					<Bond ID="72" Connects="70,78" Order="1"/>
+					<Bond ID="73" Connects="70,79" Order="1"/>
+					<Bond ID="76" Connects="75,80" Order="1"/>
+					<Bond ID="77" Connects="75,83" Order="1"/>
+					<Bond ID="81" Connects="80,84" Order="1.41"/>
+					<Bond ID="82" Connects="80,87" Type="Double" Order="2"/>
+					<Bond ID="85" Connects="84,88" Order="1"/>
+					<Bond ID="86" Connects="84,89" Order="1"/>
+				</RepeatUnit>
+				<Bond ID="53" Connects="49,75" Order="1"/>
+				<RepeatUnit ID="90" NumChildren="19" FlipProbability="0" ChiralInversionProbability="0">
+					<Atom3d ID="91" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-12.8898340813796,1.81678907310596,0.493730753361856" Connections="92,93,94,95" ForcefieldType="C_3" Components="C" Color="255,0,255,255">
+						<Properties IsBackboneAtom="1" IsChiralCenter="0" Force="0.00840202765464992,-0.00190182051473831,-0.0017028919573292"/>
+					</Atom3d>
+					<Atom3d ID="96" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-11.3750879199948,2.05261763569089,0.257064498876079" Connections="92,97,98,74" ForcefieldType="C_3" Components="C" Color="255,0,255,255">
+						<Properties IsBackboneAtom="1" IsChiralCenter="1" Force="0.00361457540398646,-0.0048055727777383,-2.93186717090776e-005"/>
+					</Atom3d>
+					<Atom3d ID="99" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-13.4634674807432,2.3345264449749,-0.307940355235971" Connections="93" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.00113623460561829,0.00662431188917301,-0.00213703440096369"/>
+					</Atom3d>
+					<Atom3d ID="100" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-13.0883403572617,0.729046364671947,0.390143072675273" Connections="94" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.00323807860568581,-0.00121006731395645,-0.00402748804683117"/>
+					</Atom3d>
+					<Atom3d ID="101" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-11.0498508140191,1.77868042456427,-1.19619631581603" Connections="97,102,103" ForcefieldType="C_R" Components="C" Color="130,130,130,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.0463451633638794,0.0224276928433107,-0.0195270074737905"/>
+					</Atom3d>
+					<Atom3d ID="104" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-11.1591704155364,3.11997237539441,0.460309434306381" Connections="98" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.00532197192693928,-0.00472784535577264,-0.0026585731147506"/>
+					</Atom3d>
+					<Atom3d ID="105" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-10.53414341432,2.76083856417431,-1.99068333068681" Connections="102,106,107" ForcefieldType="N_R" Components="N" Color="0,0,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.0350198575900672,-0.0238799666466063,0.0107879066971202"/>
+					</Atom3d>
+					<Atom3d ID="108" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-11.2445477413332,0.668684296773718,-1.66369104883891" Connections="103" ForcefieldType="O_2" Components="O" Color="255,0,0,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.025970619336063,-0.00302510548745083,0.00599094678519752"/>
+					</Atom3d>
+					<Atom3d ID="109" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-10.3069479221849,2.56764554151513,-2.99181746039632" Connections="106" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.00174621404043407,-0.00056920086618506,0.00418815395521976"/>
+					</Atom3d>
+					<Atom3d ID="110" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-10.3479054864269,3.7179158367441,-1.61657210886193" Connections="107" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.0190702391342699,0.00778662348654979,3.3788436562876e-005"/>
+					</Atom3d>
+					<Bond ID="92" Connects="91,96" Order="1"/>
+					<Bond ID="93" Connects="91,99" Order="1"/>
+					<Bond ID="94" Connects="91,100" Order="1"/>
+					<Bond ID="97" Connects="96,101" Order="1"/>
+					<Bond ID="98" Connects="96,104" Order="1"/>
+					<Bond ID="102" Connects="101,105" Order="1.41"/>
+					<Bond ID="103" Connects="101,108" Type="Double" Order="2"/>
+					<Bond ID="106" Connects="105,109" Order="1"/>
+					<Bond ID="107" Connects="105,110" Order="1"/>
+				</RepeatUnit>
+				<Bond ID="74" Connects="70,96" Order="1"/>
+				<RepeatUnit ID="111" NumChildren="19" FlipProbability="0" ChiralInversionProbability="0">
+					<Atom3d ID="112" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-14.9528563640656,2.12584588787636,1.99496706656721" Connections="113,114,115,116" ForcefieldType="C_3" Components="C" Color="255,0,255,255">
+						<Properties IsBackboneAtom="1" IsChiralCenter="0" Force="0.00815682948705687,-0.00856921245320486,-0.00251581104691345"/>
+					</Atom3d>
+					<Atom3d ID="117" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-13.4180802791552,2.30940657398433,1.86819751344234" Connections="113,118,119,95" ForcefieldType="C_3" Components="C" Color="255,0,255,255">
+						<Properties IsBackboneAtom="1" IsChiralCenter="1" Force="-0.0102960455695409,-0.00139463192174016,-0.000328501023823868"/>
+					</Atom3d>
+					<Atom3d ID="120" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-15.2921611222813,2.58963929120189,2.9478136821996" Connections="114" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.000628162340392979,-0.00474525556028604,0.000145097007864803"/>
+					</Atom3d>
+					<Atom3d ID="121" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-15.4358325707721,2.6906639083881,1.16953266335226" Connections="115" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.000983530786089093,0.00619618630113328,0.00402397443369389"/>
+					</Atom3d>
+					<Atom3d ID="122" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-13.074643862119,3.76644059041899,2.09168170664129" Connections="118,123,124" ForcefieldType="C_R" Components="C" Color="130,130,130,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.00291496441486649,0.00311312039214684,0.00995495245282374"/>
+					</Atom3d>
+					<Atom3d ID="125" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-12.9434041447241,1.70985737749241,2.67024993860874" Connections="119" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.00127782087199346,-0.00697013903911972,0.00174167493715705"/>
+					</Atom3d>
+					<Atom3d ID="126" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-12.2447440800429,4.13703912734063,3.10907435454726" Connections="123,127,128" ForcefieldType="N_R" Components="N" Color="0,0,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.0172369864567707,0.0181904765776819,-0.00613231518176671"/>
+					</Atom3d>
+					<Atom3d ID="129" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-13.532156338338,4.61910742487192,1.34860015075191" Connections="124" ForcefieldType="O_2" Components="O" Color="255,0,0,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.0104442080821878,0.00777472457801398,0.00769032445201745"/>
+					</Atom3d>
+					<Atom3d ID="130" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-12.0022414031738,5.14251785678635,3.25544631603365" Connections="127" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.00023695719796013,-0.00559050055492777,-0.00880043017678078"/>
+					</Atom3d>
+					<Atom3d ID="131" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-11.8265576565367,3.4280439219915,3.75167281863064" Connections="128" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.0119678834515131,-0.0136379339153967,0.0070364899441433"/>
+					</Atom3d>
+					<Bond ID="113" Connects="112,117" Order="1"/>
+					<Bond ID="114" Connects="112,120" Order="1"/>
+					<Bond ID="115" Connects="112,121" Order="1"/>
+					<Bond ID="118" Connects="117,122" Order="1"/>
+					<Bond ID="119" Connects="117,125" Order="1"/>
+					<Bond ID="123" Connects="122,126" Order="1.41"/>
+					<Bond ID="124" Connects="122,129" Type="Double" Order="2"/>
+					<Bond ID="127" Connects="126,130" Order="1"/>
+					<Bond ID="128" Connects="126,131" Order="1"/>
+				</RepeatUnit>
+				<Bond ID="95" Connects="91,117" Order="1"/>
+				<RepeatUnit ID="132" NumChildren="19" FlipProbability="0" ChiralInversionProbability="0">
+					<Atom3d ID="133" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-16.9685542901996,0.540689563116709,2.19387890202125" Connections="134,135,136,137" ForcefieldType="C_3" Components="C" Color="255,0,255,255">
+						<Properties IsBackboneAtom="1" IsChiralCenter="0" Force="0.00205632059888217,-0.000147021499449007,-9.02656326507989e-005"/>
+					</Atom3d>
+					<Atom3d ID="138" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-15.4403480919134,0.652497596132045,1.95306148519302" Connections="134,139,140,116" ForcefieldType="C_3" Components="C" Color="255,0,255,255">
+						<Properties IsBackboneAtom="1" IsChiralCenter="1" Force="0.00946712252696025,-0.00710759457811561,-0.00185520230890246"/>
+					</Atom3d>
+					<Atom3d ID="141" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-17.2441382257569,-0.53505327081456,2.2626950906749" Connections="135" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.00298921976440436,0.000446327696737914,-0.00634609074832726"/>
+					</Atom3d>
+					<Atom3d ID="142" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-17.1984643758063,0.997233839656254,3.17889456372946" Connections="136" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.00353772173934352,-0.00649044276067046,0.00104130075110542"/>
+					</Atom3d>
+					<Atom3d ID="143" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-14.7092748988324,-0.207496718152121,2.96216872601511" Connections="139,144,145" ForcefieldType="C_R" Components="C" Color="130,130,130,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.00189052232566515,-0.00407993785096927,0.00945148327349576"/>
+					</Atom3d>
+					<Atom3d ID="146" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-15.2289617791967,0.242674874476053,0.942919943168405" Connections="140" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.000891468033556553,-0.00168714422649141,0.0140290174177686"/>
+					</Atom3d>
+					<Atom3d ID="147" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-14.7675406072996,0.0657906720998534,4.2983481094882" Connections="144,148,149" ForcefieldType="N_R" Components="N" Color="0,0,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.018938423359701,0.0241651309457138,-0.0196292174293466"/>
+					</Atom3d>
+					<Atom3d ID="150" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-14.0531675101616,-1.15904483642982,2.57342772018437" Connections="145" ForcefieldType="O_2" Components="O" Color="255,0,0,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.0162766580365723,0.00944647521661901,0.0101771909929764"/>
+					</Atom3d>
+					<Atom3d ID="151" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-14.2562663282034,-0.534274834800047,4.98369457196395" Connections="148" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.00315425542552544,-0.00637375298245768,-0.00128889187668424"/>
+					</Atom3d>
+					<Atom3d ID="152" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-15.3133454280057,0.877091973444806,4.66340429070866" Connections="149" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.00238948632745029,-0.00825175846067028,-0.00364228901677066"/>
+					</Atom3d>
+					<Bond ID="134" Connects="133,138" Order="1"/>
+					<Bond ID="135" Connects="133,141" Order="1"/>
+					<Bond ID="136" Connects="133,142" Order="1"/>
+					<Bond ID="139" Connects="138,143" Order="1"/>
+					<Bond ID="140" Connects="138,146" Order="1"/>
+					<Bond ID="144" Connects="143,147" Order="1.41"/>
+					<Bond ID="145" Connects="143,150" Type="Double" Order="2"/>
+					<Bond ID="148" Connects="147,151" Order="1"/>
+					<Bond ID="149" Connects="147,152" Order="1"/>
+				</RepeatUnit>
+				<Bond ID="116" Connects="112,138" Order="1"/>
+				<RepeatUnit ID="153" NumChildren="19" FlipProbability="0" ChiralInversionProbability="0">
+					<Atom3d ID="154" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-19.3630319445298,0.981184126396487,1.36250719068756" Connections="155,156,157,158" ForcefieldType="C_3" Components="C" Color="255,0,255,255">
+						<Properties IsBackboneAtom="1" IsChiralCenter="0" Force="0.00102356418572414,-0.000758309500267895,0.00288794068368325"/>
+					</Atom3d>
+					<Atom3d ID="159" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-17.8505365968286,1.2161494475098,1.10947385423173" Connections="155,160,161,137" ForcefieldType="C_3" Components="C" Color="255,0,255,255">
+						<Properties IsBackboneAtom="1" IsChiralCenter="1" Force="0.0019014845541403,0.0026057751110895,-0.00159428568222619"/>
+					</Atom3d>
+					<Atom3d ID="162" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-19.9388982302564,1.39440535972606,0.50493010553303" Connections="156" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.00272692624233528,0.00587485533571885,-0.000773503223268524"/>
+					</Atom3d>
+					<Atom3d ID="163" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-19.5454634628832,-0.11332774531188,1.37890384108401" Connections="157" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.00252490265796562,0.00080401861179874,-0.00192941849122485"/>
+					</Atom3d>
+					<Atom3d ID="164" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-17.4937515948989,0.735256941819734,-0.281142239210062" Connections="160,165,166" ForcefieldType="C_R" Components="C" Color="130,130,130,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.0334522745085732,-0.00559398627338625,-0.00786196182442822"/>
+					</Atom3d>
+					<Atom3d ID="167" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-17.6705752935965,2.31133630129862,1.14493765265419" Connections="161" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.0049478254284081,-0.00500197233439503,-0.00406687483083723"/>
+					</Atom3d>
+					<Atom3d ID="168" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-17.5968747576534,-0.582564339390205,-0.621942410484777" Connections="165,169,170" ForcefieldType="N_R" Components="N" Color="0,0,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.00303157286428379,0.00767633382426691,-0.000391882206416838"/>
+					</Atom3d>
+					<Atom3d ID="171" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-17.1029439677286,1.53953669566161,-1.11027991022394" Connections="166" ForcefieldType="O_2" Components="O" Color="255,0,0,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.0382669296267235,-0.00238898606779703,0.0133519018360433"/>
+					</Atom3d>
+					<Atom3d ID="172" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-17.3451299073074,-0.901180527574901,-1.58439067004601" Connections="169" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.00228844285350233,0.00199450584749084,0.00185671949699712"/>
+					</Atom3d>
+					<Atom3d ID="173" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-17.9204295319274,-1.29773233278277,0.0659556952839676" Connections="170" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.00255068004651959,0.00118087209159778,-0.00607836035096598"/>
+					</Atom3d>
+					<Bond ID="155" Connects="154,159" Order="1"/>
+					<Bond ID="156" Connects="154,162" Order="1"/>
+					<Bond ID="157" Connects="154,163" Order="1"/>
+					<Bond ID="160" Connects="159,164" Order="1"/>
+					<Bond ID="161" Connects="159,167" Order="1"/>
+					<Bond ID="165" Connects="164,168" Order="1.41"/>
+					<Bond ID="166" Connects="164,171" Type="Double" Order="2"/>
+					<Bond ID="169" Connects="168,172" Order="1"/>
+					<Bond ID="170" Connects="168,173" Order="1"/>
+				</RepeatUnit>
+				<Bond ID="137" Connects="133,159" Order="1"/>
+				<RepeatUnit ID="174" NumChildren="19" FlipProbability="0" ChiralInversionProbability="0">
+					<Atom3d ID="175" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-21.4432767646141,1.42089177800566,2.81297857165779" Connections="176,177,178,179" ForcefieldType="C_3" Components="C" Color="255,0,255,255">
+						<Properties IsBackboneAtom="1" IsChiralCenter="0" Force="-0.00121762196092484,-0.00151784895455698,-0.000514718754511034"/>
+					</Atom3d>
+					<Atom3d ID="180" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-19.9087014864028,1.60006529630051,2.67753432738176" Connections="176,181,182,158" ForcefieldType="C_3" Components="C" Color="255,0,255,255">
+						<Properties IsBackboneAtom="1" IsChiralCenter="1" Force="7.60758180144983e-005,-0.00116082823983721,-0.000242460337881334"/>
+					</Atom3d>
+					<Atom3d ID="183" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-21.7911004959491,1.98437349802406,3.70734862201575" Connections="177" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.000442083034362106,-0.000945693618623178,-0.00273072301249586"/>
+					</Atom3d>
+					<Atom3d ID="184" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-21.9437462145725,1.87879896517685,1.93152027291612" Connections="178" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.00427216435417055,-0.00241081219456518,0.00283648273686177"/>
+					</Atom3d>
+					<Atom3d ID="185" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-19.5640267656431,3.06993121606082,2.7892850128844" Connections="181,186,187" ForcefieldType="C_R" Components="C" Color="130,130,130,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.0313196802100877,0.00691883175054109,0.00467334813732467"/>
+					</Atom3d>
+					<Atom3d ID="188" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-19.4352191730458,1.07365399372407,3.53339527755236" Connections="182" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.00570641166754637,-0.000346218621203487,0.00131693110270392"/>
+					</Atom3d>
+					<Atom3d ID="189" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-20.0003856416019,3.97068485837164,1.86114308875284" Connections="186,190,191" ForcefieldType="N_R" Components="N" Color="0,0,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.0242119614302325,-0.00400306951073848,0.000111013964187417"/>
+					</Atom3d>
+					<Atom3d ID="192" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-18.881378280755,3.45512216760385,3.72343145459699" Connections="187" ForcefieldType="O_2" Components="O" Color="255,0,0,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.0210413654534105,0.00432929774610669,-0.0030223436164265"/>
+					</Atom3d>
+					<Atom3d ID="193" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-19.7537131441465,4.9819739435935,1.94860585735256" Connections="190" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.0017057779971601,-0.00126031769230206,-0.000199912390036694"/>
+					</Atom3d>
+					<Atom3d ID="194" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-20.5804533430298,3.67229293290743,1.04637344413075" Connections="191" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.017696059466966,-0.00399795602713304,0.00208181643444316"/>
+					</Atom3d>
+					<Bond ID="176" Connects="175,180" Order="1"/>
+					<Bond ID="177" Connects="175,183" Order="1"/>
+					<Bond ID="178" Connects="175,184" Order="1"/>
+					<Bond ID="181" Connects="180,185" Order="1"/>
+					<Bond ID="182" Connects="180,188" Order="1"/>
+					<Bond ID="186" Connects="185,189" Order="1.41"/>
+					<Bond ID="187" Connects="185,192" Type="Double" Order="2"/>
+					<Bond ID="190" Connects="189,193" Order="1"/>
+					<Bond ID="191" Connects="189,194" Order="1"/>
+				</RepeatUnit>
+				<Bond ID="158" Connects="154,180" Order="1"/>
+				<RepeatUnit ID="195" NumChildren="21" FlipProbability="0" ChiralInversionProbability="0">
+					<Atom3d ID="196" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-23.9257785910498,0.333421622345195,2.18687320569361" Connections="197" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="1" IsChiralCenter="0" Force="0.00466566986020434,-0.00564766358272295,0.0133596425157652"/>
+					</Atom3d>
+					<Atom3d ID="198" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-23.4392758436623,-0.115580203283644,3.07912290763459" Connections="199,200,197,201" ForcefieldType="C_3" Components="C" Color="255,0,255,255">
+						<Properties IsBackboneAtom="1" IsChiralCenter="0" Force="-0.0102871321399407,-0.00603788955771334,-0.00111005865614833"/>
+					</Atom3d>
+					<Atom3d ID="202" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-21.9138784022593,-0.049170472978508,2.93512698469506" Connections="199,203,204,179" ForcefieldType="C_3" Components="C" Color="255,0,255,255">
+						<Properties IsBackboneAtom="1" IsChiralCenter="1" Force="0.00291991167012373,0.00310075408001498,0.00279050732064834"/>
+					</Atom3d>
+					<Atom3d ID="205" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-23.7706444514589,-1.17345155857218,3.15677193803594" Connections="200" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.00165862574369102,0.0168944358700758,-0.000946195273871187"/>
+					</Atom3d>
+					<Atom3d ID="206" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-23.781200061422,0.434406813806082,3.98159080927432" Connections="201" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.00381973737677033,-0.00718665872974082,-0.0102215735935396"/>
+					</Atom3d>
+					<Atom3d ID="207" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-21.2486149016712,-0.771789385542008,4.08495336665117" Connections="203,208,209" ForcefieldType="C_R" Components="C" Color="130,130,130,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.00951067716241805,-0.00741107753135228,0.00148246098244265"/>
+					</Atom3d>
+					<Atom3d ID="210" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-21.6688097126014,-0.57757942601073,1.98827289123291" Connections="204" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.00283450497913584,-0.00122109330356601,0.00228378730278767"/>
+					</Atom3d>
+					<Atom3d ID="211" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-21.3930911646575,-0.338836947781399,5.37136198370951" Connections="208,212,213" ForcefieldType="N_R" Components="N" Color="0,0,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="-0.0144933879981273,0.00421681808451524,-0.0177927172329966"/>
+					</Atom3d>
+					<Atom3d ID="214" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-20.5664050003383,-1.75632831138212,3.85684738849261" Connections="209" ForcefieldType="O_2" Components="O" Color="255,0,0,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.00327966179924122,0.0130894529092669,0.000725961781378445"/>
+					</Atom3d>
+					<Atom3d ID="215" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-20.9249522754878,-0.84565292227141,6.15570901179532" Connections="212" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.00785600858385482,-0.000839525691811449,0.0121907904133001"/>
+					</Atom3d>
+					<Atom3d ID="216" HasProperties="1" DisplayStyle="Ball and Stick" XYZ="-21.9668590337697,0.502584624242266,5.59979944970032" Connections="213" ForcefieldType="H_" Components="H" Color="255,255,255,255">
+						<Properties IsBackboneAtom="0" IsChiralCenter="0" Force="0.0100246368720565,-0.00511259392819069,-0.00196668334999384"/>
+					</Atom3d>
+					<Bond ID="197" Connects="198,196" Order="1"/>
+					<Bond ID="199" Connects="198,202" Order="1"/>
+					<Bond ID="200" Connects="198,205" Order="1"/>
+					<Bond ID="201" Connects="198,206" Order="1"/>
+					<Bond ID="203" Connects="202,207" Order="1"/>
+					<Bond ID="204" Connects="202,210" Order="1"/>
+					<Bond ID="208" Connects="207,211" Order="1.41"/>
+					<Bond ID="209" Connects="207,214" Type="Double" Order="2"/>
+					<Bond ID="212" Connects="211,215" Order="1"/>
+					<Bond ID="213" Connects="211,216" Order="1"/>
+				</RepeatUnit>
+				<Bond ID="179" Connects="175,202" Order="1"/>
+			</LinearChain>
+		</Molecule>
+	</AtomisticTreeRoot>
+</XSD>

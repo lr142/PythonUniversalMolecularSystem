@@ -1,0 +1,4 @@
+Cu:Cu {}
+H:SPC.H {O:SPC.O}
+O:SPC.O {H H}
+

@@ -1,0 +1,2 @@
+import "spc_oplsaa.lt"
+wat = new SPC_oplsaa[1]

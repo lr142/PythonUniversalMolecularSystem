@@ -1,0 +1,3 @@
+此目录包含一些程序运行时需要的数据文件。
+此文件的路径被定义在模块 Utitliy/DATAFILESPATH中。如有需要，请from Utility import *
+然后用 DATAFILESPATH/filename来指定所需要的文件名

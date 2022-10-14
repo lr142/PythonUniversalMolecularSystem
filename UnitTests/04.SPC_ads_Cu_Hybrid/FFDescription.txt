@@ -1,0 +1,40 @@
+# Cu 的参数来自EAM，units metal, eneryg in eV;
+# 而SPC参数来自OPLS, units real, energy in kcal/mol.
+# 需要把H2O的参数中的所有能量转成eV，1 eV = 23.0605 kcal/mol
+
+FUNCTIONAL{
+# 力场的函数形式。在目前的实现中，这里的字段会被原封不动地复制到LAMMPS程序的输入文件中，故它们需符合LAMMPS格式，
+    units metal
+    atom_style full
+    bond_style harmonic
+    angle_style harmonic
+    dihedral_style opls
+    improper_style harmonic
+    pair_style hybrid/overlay lj/cut/coul/long 11.0 11.0 eam
+    #pair_modify mix geometric
+    special_bonds lj/coul 0.0 0.0 0.5
+    kspace_style pppm 0.0001
+}
+
+ATOMS {
+    Cu    --       63.546  0.00
+    SPC.O --       15.9994 -0.82     # Type 76 in OPLSAA
+    SPC.H --       1.008   0.41      # 77
+}
+
+PAIRWISE {
+    pair_coeff Cu Cu eam Cu_u6.eam
+    pair_coeff SPC.O SPC.O  lj/cut/coul/long 0.0067387957 3.16557   # pair_coeff SPC.O SPC.O  0.1554 3.16557
+    pair_coeff SPC.H SPC.H  lj/cut/coul/long 0.0 0.0
+    pair_coeff SPC.O SPC.H  lj/cut/coul/long 0.0 0.0
+    pair_coeff Cu    SPC.O  lj/cut/coul/long 0.2 3.16557   # E_ads of around 0.2 eV and equil distance of 3.2 Å
+    pair_coeff Cu    SPC.H  lj/cut/coul/long 0.0 0.0
+}
+
+BONDS{
+    SPC.O   SPC.H   bond_coeff --  24.0296134082 1.0 #    SPC.O   SPC.H   bond_coeff --  554.1349 1.0
+}
+
+ANGLES{
+    SPC.H SPC.O SPC.H       angle_coeff --  1.9847618221 109.47 #     SPC.H SPC.O SPC.H       angle_coeff --  45.7696 109.47
+}

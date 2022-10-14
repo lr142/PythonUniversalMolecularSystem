@@ -1,0 +1,91 @@
+import os
+import sys
+sys.path.append("../../")
+from Forcefield import *
+from Utility import *
+from UniversalMolecularSystem import *
+from XYZFile import *
+from MOL2File import *
+from BondDetection import *
+from VMDInterface import *
+
+def SetupMolecule(filename):
+    ms = MolecularSystem()
+    if filename.endswith("mol2"):
+        ms.Read(MOL2File(),filename)
+    elif filename.endswith("xyz"):
+        ms.Read(XYZFile(), filename)
+    else:
+        return
+    ms.AutoDetectBonds(DefaultBondRules())
+    for a in ms.molecules[0].atoms:
+        a.type = None
+    ms.Summary()
+    with open("dump.mol2", "w") as dumpfile:
+        output.setoutput(dumpfile)
+        ms.Write(MOL2File())
+        output.setoutput(sys.stdout)
+    return ms
+
+def AddLabels(molecularSystem,ABADI):
+    mol = ReduceSystemToOneMolecule(molecularSystem).molecules[0]
+    vmd = VMDInterface("dump.mol2", autobonds=False)
+    vmd.AddCommand("label textthickness 1.5")
+    vmd.AddCommand("label textsize 1.0")
+
+    if 2 in ABADI:
+        indexes = [_ for _ in range(len(mol.atoms))]
+        labels = ["%i:{}".format(a.type) for a in mol.atoms]
+        vmd.AddLabels(indexes, labels, offset=[0.01, 0.01, 0.5])
+        vmd.AddCommand("mol modstyle 0 0 CPK 0.6 0.2 12.0 12.0")
+    for BADI in range(3,5):
+        if BADI not in ABADI:
+            continue
+        categories = ["-","-","Bonds","Angles","Dihedrals"]
+        pg = PathGenerator(mol.BondedMap())
+        paths = pg.AllBondsAnglesDihedrals(BADI)
+        for p in paths:
+            placeholder = "0/{} "*BADI
+            primitive = "label add {} {}".format(categories[BADI],placeholder)
+            cmd = None
+            if BADI == 2:
+                cmd = primitive.format(p[0],p[1])
+            elif BADI == 3:
+                cmd = primitive.format(p[0],p[1],p[2])
+            else:
+                cmd = primitive.format(p[0],p[1],p[2],p[3])
+            #print(primitive,cmd)
+            vmd.AddCommand(cmd)
+    return vmd
+
+def Main():
+    #filename = os.path.join(DATAFILESPATH,"Structures","tip4p_water_chunk.xyz")
+    #filename = os.path.join(DATAFILESPATH, "Structures", "naphalene.xyz")
+    filename = os.path.join("chunk.xyz")
+
+    ms = SetupMolecule(filename)
+    ms = BreakupMoleculeByConnectivity(ms.molecules[0])
+    ms.Summary()
+
+    ff = Forcefield("system",
+                    os.path.join(FORCEFIELDSPATH, "OPLSAtomTypes.txt"),
+                    os.path.join(FORCEFIELDSPATH, "OPLSDescription.txt"))
+    anotherFF = Forcefield("system",
+        os.path.join(FORCEFIELDSPATH, "AtomTypes.txt"),
+        os.path.join(FORCEFIELDSPATH, "TIP4PDescription.txt"))
+    ff.Extend(anotherFF)
+
+    ff.SetBoundary([[0, 50], [0, 50], [0, 50]])
+    for mol in ms.molecules:
+        ff.AddMolecule(mol)
+    ff.Finalize()
+    ff.WriteLAMMPSFiles()
+
+
+    vmd = AddLabels(ms,[])
+
+    vmd.Run(dryrun=True)
+
+Main()
+
+

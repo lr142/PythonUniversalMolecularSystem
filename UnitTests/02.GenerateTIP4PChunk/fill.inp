@@ -1,0 +1,8 @@
+tolerance 2.0
+filetype xyz
+output chunk.xyz
+
+structure tip4p_water.xyz
+  number 4178 
+  inside box 0. 0. 0. 48. 48. 48. 
+end structure

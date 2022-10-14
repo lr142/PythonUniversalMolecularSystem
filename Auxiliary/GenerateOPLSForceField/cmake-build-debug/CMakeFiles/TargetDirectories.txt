@@ -1,0 +1,3 @@
+/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug/CMakeFiles/GenerateOPLSForceField.dir
+/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug/CMakeFiles/rebuild_cache.dir

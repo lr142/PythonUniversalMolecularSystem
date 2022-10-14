@@ -1,0 +1,9 @@
+    # Define a group for the spc water molecules:
+    group spc type  76  77
+
+    # Constrain the angles and distances in spc water:
+    fix fRattleSPCE spc rattle 0.0001 10 100 b 380 a 1018
+
+    # Remember to put this command in your LAMMPS input script:
+    #  include system.in.constraints
+    # ...AFTER minimization and after all integration fixes.
