@@ -4,100 +4,102 @@
 	<Project>
 		<Option title="GenerateOPLSForceField"/>
 		<Option makefile_is_custom="1"/>
-		<Option compiler="gcc"/>
+		<Option compiler="msvc8"/>
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug"/>
+				<Option working_dir="D:/Projects/PUniMolSys/Auxiliary/GenerateOPLSForceField/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j10 -f &quot;/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j10 -f &quot;/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j10 -f &quot;/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j10 -f &quot;/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f D:\Projects\PUniMolSys\Auxiliary\GenerateOPLSForceField\cmake-build-debug\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f D:\Projects\PUniMolSys\Auxiliary\GenerateOPLSForceField\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\Projects\PUniMolSys\Auxiliary\GenerateOPLSForceField\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\Projects\PUniMolSys\Auxiliary\GenerateOPLSForceField\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="GenerateOPLSForceField">
-				<Option output="/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug/GenerateOPLSForceField" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug"/>
+				<Option output="D:/Projects/PUniMolSys/Auxiliary/GenerateOPLSForceField/cmake-build-debug/GenerateOPLSForceField.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Projects/PUniMolSys/Auxiliary/GenerateOPLSForceField/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="gcc"/>
+				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="/opt/homebrew/Cellar/gcc/11.2.0_3/bin/../lib/gcc/11/gcc/aarch64-apple-darwin21/11/../../../../../../include/c++/11"/>
-					<Add directory="/opt/homebrew/Cellar/gcc/11.2.0_3/bin/../lib/gcc/11/gcc/aarch64-apple-darwin21/11/../../../../../../include/c++/11/aarch64-apple-darwin21"/>
-					<Add directory="/opt/homebrew/Cellar/gcc/11.2.0_3/bin/../lib/gcc/11/gcc/aarch64-apple-darwin21/11/../../../../../../include/c++/11/backward"/>
-					<Add directory="/opt/homebrew/Cellar/gcc/11.2.0_3/bin/../lib/gcc/11/gcc/aarch64-apple-darwin21/11/include"/>
-					<Add directory="/opt/homebrew/Cellar/gcc/11.2.0_3/bin/../lib/gcc/11/gcc/aarch64-apple-darwin21/11/include-fixed"/>
-					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks"/>
+					<Add directory="D:\soft\VisuaStudio2022\VC\Tools\MSVC\14.33.31629\include"/>
+					<Add directory="D:\soft\VisuaStudio2022\VC\Tools\MSVC\14.33.31629\ATLMFC\include"/>
+					<Add directory="D:\soft\VisuaStudio2022\VC\Auxiliary\VS\include"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.19041.0\ucrt"/>
+					<Add directory="D:\Windows Kits\10\\include\10.0.19041.0\\um"/>
+					<Add directory="D:\Windows Kits\10\\include\10.0.19041.0\\shared"/>
+					<Add directory="D:\Windows Kits\10\\include\10.0.19041.0\\winrt"/>
+					<Add directory="D:\Windows Kits\10\\include\10.0.19041.0\\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j10 -f &quot;/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug/Makefile&quot;  VERBOSE=1 GenerateOPLSForceField"/>
-					<CompileFile command="/usr/bin/make -j10 -f &quot;/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j10 -f &quot;/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j10 -f &quot;/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f D:\Projects\PUniMolSys\Auxiliary\GenerateOPLSForceField\cmake-build-debug\Makefile VERBOSE=1 GenerateOPLSForceField"/>
+					<CompileFile command="nmake /NOLOGO /f D:\Projects\PUniMolSys\Auxiliary\GenerateOPLSForceField\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\Projects\PUniMolSys\Auxiliary\GenerateOPLSForceField\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\Projects\PUniMolSys\Auxiliary\GenerateOPLSForceField\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="GenerateOPLSForceField/fast">
-				<Option output="/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug/GenerateOPLSForceField" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug"/>
+				<Option output="D:/Projects/PUniMolSys/Auxiliary/GenerateOPLSForceField/cmake-build-debug/GenerateOPLSForceField.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Projects/PUniMolSys/Auxiliary/GenerateOPLSForceField/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="gcc"/>
+				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="/opt/homebrew/Cellar/gcc/11.2.0_3/bin/../lib/gcc/11/gcc/aarch64-apple-darwin21/11/../../../../../../include/c++/11"/>
-					<Add directory="/opt/homebrew/Cellar/gcc/11.2.0_3/bin/../lib/gcc/11/gcc/aarch64-apple-darwin21/11/../../../../../../include/c++/11/aarch64-apple-darwin21"/>
-					<Add directory="/opt/homebrew/Cellar/gcc/11.2.0_3/bin/../lib/gcc/11/gcc/aarch64-apple-darwin21/11/../../../../../../include/c++/11/backward"/>
-					<Add directory="/opt/homebrew/Cellar/gcc/11.2.0_3/bin/../lib/gcc/11/gcc/aarch64-apple-darwin21/11/include"/>
-					<Add directory="/opt/homebrew/Cellar/gcc/11.2.0_3/bin/../lib/gcc/11/gcc/aarch64-apple-darwin21/11/include-fixed"/>
-					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/usr/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX12.sdk/System/Library/Frameworks"/>
+					<Add directory="D:\soft\VisuaStudio2022\VC\Tools\MSVC\14.33.31629\include"/>
+					<Add directory="D:\soft\VisuaStudio2022\VC\Tools\MSVC\14.33.31629\ATLMFC\include"/>
+					<Add directory="D:\soft\VisuaStudio2022\VC\Auxiliary\VS\include"/>
+					<Add directory="D:\Windows Kits\10\include\10.0.19041.0\ucrt"/>
+					<Add directory="D:\Windows Kits\10\\include\10.0.19041.0\\um"/>
+					<Add directory="D:\Windows Kits\10\\include\10.0.19041.0\\shared"/>
+					<Add directory="D:\Windows Kits\10\\include\10.0.19041.0\\winrt"/>
+					<Add directory="D:\Windows Kits\10\\include\10.0.19041.0\\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j10 -f &quot;/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug/Makefile&quot;  VERBOSE=1 GenerateOPLSForceField/fast"/>
-					<CompileFile command="/usr/bin/make -j10 -f &quot;/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j10 -f &quot;/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j10 -f &quot;/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f D:\Projects\PUniMolSys\Auxiliary\GenerateOPLSForceField\cmake-build-debug\Makefile VERBOSE=1 GenerateOPLSForceField/fast"/>
+					<CompileFile command="nmake /NOLOGO /f D:\Projects\PUniMolSys\Auxiliary\GenerateOPLSForceField\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\Projects\PUniMolSys\Auxiliary\GenerateOPLSForceField\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\Projects\PUniMolSys\Auxiliary\GenerateOPLSForceField\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug"/>
+				<Option working_dir="D:/Projects/PUniMolSys/Auxiliary/GenerateOPLSForceField/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j10 -f &quot;/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j10 -f &quot;/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j10 -f &quot;/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j10 -f &quot;/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f D:\Projects\PUniMolSys\Auxiliary\GenerateOPLSForceField\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f D:\Projects\PUniMolSys\Auxiliary\GenerateOPLSForceField\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\Projects\PUniMolSys\Auxiliary\GenerateOPLSForceField\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\Projects\PUniMolSys\Auxiliary\GenerateOPLSForceField\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug"/>
+				<Option working_dir="D:/Projects/PUniMolSys/Auxiliary/GenerateOPLSForceField/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j10 -f &quot;/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j10 -f &quot;/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j10 -f &quot;/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j10 -f &quot;/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f D:\Projects\PUniMolSys\Auxiliary\GenerateOPLSForceField\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f D:\Projects\PUniMolSys\Auxiliary\GenerateOPLSForceField\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\Projects\PUniMolSys\Auxiliary\GenerateOPLSForceField\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\Projects\PUniMolSys\Auxiliary\GenerateOPLSForceField\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/forcefield.cpp">
+		<Unit filename="D:/Projects/PUniMolSys/Auxiliary/GenerateOPLSForceField/forcefield.cpp">
 			<Option target="GenerateOPLSForceField"/>
 		</Unit>
-		<Unit filename="/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/forcefield.h">
+		<Unit filename="D:/Projects/PUniMolSys/Auxiliary/GenerateOPLSForceField/forcefield.h">
 			<Option target="GenerateOPLSForceField"/>
 		</Unit>
-		<Unit filename="/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/main.cpp">
+		<Unit filename="D:/Projects/PUniMolSys/Auxiliary/GenerateOPLSForceField/main.cpp">
 			<Option target="GenerateOPLSForceField"/>
 		</Unit>
-		<Unit filename="/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/utility.cpp">
+		<Unit filename="D:/Projects/PUniMolSys/Auxiliary/GenerateOPLSForceField/utility.cpp">
 			<Option target="GenerateOPLSForceField"/>
 		</Unit>
-		<Unit filename="/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/utility.h">
+		<Unit filename="D:/Projects/PUniMolSys/Auxiliary/GenerateOPLSForceField/utility.h">
 			<Option target="GenerateOPLSForceField"/>
 		</Unit>
-		<Unit filename="/Users/me/_Nutbox/UniversalMolecularSystem/Auxiliary/GenerateOPLSForceField/CMakeLists.txt">
+		<Unit filename="D:/Projects/PUniMolSys/Auxiliary/GenerateOPLSForceField/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

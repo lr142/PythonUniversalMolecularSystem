@@ -1,0 +1,19 @@
+ATOMS {
+#    Atom    Bond     Mass     Charge # Comment
+}
+
+PAIRWISE {
+}
+
+BONDS {
+}
+
+ANGLES {
+}
+
+DIHEDRALS {
+}
+
+IMPROPERS {
+}
+
