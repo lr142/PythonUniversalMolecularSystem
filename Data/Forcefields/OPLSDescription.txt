@@ -285,6 +285,6 @@ IMPROPERS{
 # 注意该处出现的名字，应该是"原子参与成键时使用的种类名"，若用户没有指定，则使用原子本身的种类名。
 # 可以使用通配符 *
 # 一个Improper应该只被计算一次，而不是3!=6次
-    Cdouble * * *       improper_coeff --  15.0 0.0              # X_X_047_X, moltemplate应该有错
+    Cdouble * * *       improper_coeff --  15.0 0.0              # X_X_047_X, moltemplate应该有错，应该是0而不是180
     C.ar    * * *       improper_coeff --   1.0 0.0              # X_X_049_X
 }
