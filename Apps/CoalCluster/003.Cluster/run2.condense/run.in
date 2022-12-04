@@ -4,7 +4,7 @@ read_data "start.data" # start.data is final.data in run1
 include "system.in.settings"
 
 thermo_style custom step temp pe ke press lx density
-
+thermo 100
 
 reset_timestep 0
 timestep 1
@@ -12,7 +12,7 @@ timestep 1
 # dump every 1 ps
 dump d1 all custom 1000 system.lammpstrj id mol type x y z vx vy vz ix iy iz
 
-variable T equal 1000
+variable T equal 800
 variable S equal 100000
 
 variable P equal 1

@@ -43,7 +43,7 @@ Finding 1-2 1-3 1-4 neighbors ...
     22 = max # of 1-4 neighbors
     24 = max # of special neighbors
   special bonds CPU = 0.008 seconds
-  read_data CPU = 1.553 seconds
+  read_data CPU = 0.950 seconds
 include "system.in.settings"
 pair_coeff 1 1 0.0 0.0
 pair_coeff 2 2 0.1554 3.16557
@@ -542,4 +542,115 @@ dihedral_coeff 195 -3.5 3.0 0.0 0.0
 dihedral_coeff 196 0.0 2.5 0.0 0.0
 dihedral_coeff 197 0.0 3.0 0.0 0.0
 dihedral_coeff 198 0.4 5.5 0.0 0.0
-dihedral_coeff 199 3.0 3.0 0.0 
+dihedral_coeff 199 3.0 3.0 0.0 0.0
+dihedral_coeff 200 0.0 2.1 0.0 0.0
+dihedral_coeff 201 0.0 2.1 0.0 0.0
+dihedral_coeff 202 0.0 2.1 0.0 0.0
+dihedral_coeff 203 0.0 2.1 0.0 0.0
+dihedral_coeff 204 0.0 0.0 0.3 0.0
+dihedral_coeff 205 0.0 0.0 0.3 0.0
+dihedral_coeff 206 0.0 0.0 0.3 0.0
+dihedral_coeff 207 -7.582 3.431 3.198 0.0
+dihedral_coeff 208 0.0 2.03 0.0 0.0
+dihedral_coeff 209 0.0 -8.0 0.0 0.0
+dihedral_coeff 210 0.0 -8.0 0.0 0.0
+dihedral_coeff 211 0.0 14.0 0.0 0.0
+dihedral_coeff 212 0.0 14.0 0.0 0.0
+dihedral_coeff 213 0.0 14.0 0.0 0.0
+dihedral_coeff 214 0.0 14.0 0.0 0.0
+dihedral_coeff 215 0.0 14.0 0.0 0.0
+dihedral_coeff 216 0.0 14.0 0.0 0.0
+dihedral_coeff 217 0.0 14.0 0.0 0.0
+dihedral_coeff 218 0.0 14.0 0.0 0.0
+dihedral_coeff 219 0.0 14.0 0.0 0.0
+dihedral_coeff 220 -1.6 14.0 0.0 0.0
+dihedral_coeff 221 0.0 14.0 0.0 0.0
+dihedral_coeff 222 0.0 14.0 0.0 0.0
+dihedral_coeff 223 0.0 14.0 0.0 0.0
+dihedral_coeff 224 0.205 -0.531 0.0 0.0
+dihedral_coeff 225 0.0 0.0 -0.372 0.0
+dihedral_coeff 226 0.0 0.0 -0.372 0.0
+dihedral_coeff 227 1.241 3.353 -0.286 0.0
+dihedral_coeff 228 0.0 7.25 0.0 0.0
+dihedral_coeff 229 0.0 7.25 0.0 0.0
+dihedral_coeff 230 0.0 7.25 0.0 0.0
+dihedral_coeff 231 0.0 7.25 0.0 0.0
+dihedral_coeff 232 0.0 7.25 0.0 0.0
+dihedral_coeff 233 0.0 7.25 0.0 0.0
+dihedral_coeff 234 0.0 7.25 0.0 0.0
+dihedral_coeff 235 0.0 7.25 0.0 0.0
+dihedral_coeff 236 0.0 7.25 0.0 0.0
+dihedral_coeff 237 0.0 7.25 0.0 0.0
+dihedral_coeff 238 0.0 7.25 0.0 0.0
+dihedral_coeff 239 0.0 7.25 0.0 0.0
+dihedral_coeff 240 0.0 7.25 0.0 0.0
+dihedral_coeff 241 0.0 7.25 0.0 0.0
+dihedral_coeff 242 0.0 0.0 0.0 0.0
+dihedral_coeff 243 0.0 7.25 0.0 0.0
+dihedral_coeff 244 0.0 7.25 0.0 0.0
+dihedral_coeff 245 0.0 7.25 0.0 0.0
+dihedral_coeff 246 0.0 7.25 0.0 0.0
+dihedral_coeff 247 0.0 7.25 0.0 0.0
+dihedral_coeff 248 0.0 7.25 0.0 0.0
+dihedral_coeff 249 1.816 1.222 1.581 0.0
+dihedral_coeff 250 0.0 0.82 0.0 0.0
+dihedral_coeff 251 1.0 0.0 0.0 0.0
+dihedral_coeff 252 6.28 -1.467 2.03 0.0
+dihedral_coeff 253 1.428 0.086 0.029 0.0
+dihedral_coeff 254 1.438 -0.124 0.264 0.0
+dihedral_coeff 255 1.3 -0.05 0.2 0.0
+dihedral_coeff 256 1.3 -0.05 0.2 0.0
+improper_coeff 1 10.5 0.000000
+improper_coeff 2 10.5 0.000000
+improper_coeff 3 1.0 0.000000
+improper_coeff 4 15.0 0.000000
+improper_coeff 5 1.1 0.000000
+
+thermo_style custom step temp pe ke press lx density
+thermo 100
+
+reset_timestep 0
+timestep 1
+
+# dump every 1 ps
+dump d1 all custom 1000 system.lammpstrj id mol type x y z vx vy vz ix iy iz
+
+variable T equal 800
+variable S equal 100000
+
+variable P equal 1
+fix  f0 all npt temp $T $T 100 iso $P $P 1000.0
+fix  f0 all npt temp 800 $T 100 iso $P $P 1000.0
+fix  f0 all npt temp 800 800 100 iso $P $P 1000.0
+fix  f0 all npt temp 800 800 100 iso 1 $P 1000.0
+fix  f0 all npt temp 800 800 100 iso 1 1 1000.0
+run         $S
+run         100000
+PPPM initialization ...
+  using 12-bit tables for long-range coulomb (../kspace.cpp:340)
+  G vector (1/distance) = 0.15197509
+  grid = 32 32 32
+  stencil order = 5
+  estimated absolute RMS force accuracy = 0.040422641
+  estimated relative force accuracy = 0.00012173158
+  using double precision KISS FFT
+  3d grid and FFT values/proc = 9261 4096
+Neighbor list info ...
+  update every 1 steps, delay 10 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 13
+  ghost atom cutoff = 13
+  binsize = 6.5, bins = 30 30 30
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair lj/cut/coul/long, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d
+      bin: standard
+Per MPI rank memory allocation (min/avg/max) = 24.43 | 28.51 | 49.13 Mbytes
+Step Temp PotEng KinEng Press Lx Density 
+       0    1001.6894    221868.44    170548.52   -3.0794788       191.88  0.099992376 
+     100    972.13712    216656.64    165516.93    1.7278298    191.86666   0.10001324 
+     200    934.20328    210092.38    159058.28   -17.451665    191.81523    0.1000937 
+     300    893.84569     204549.3    152186.96    62.515539    191.69242    0.1002862 
+     400    864.69125    198303.02     147223.1    -23.60383    191.54019   0.1005
