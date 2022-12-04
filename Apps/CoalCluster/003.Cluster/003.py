@@ -13,14 +13,41 @@ def Main():
     # molSys = BreakupMoleculeByConnectivity(molSys.molecules[0])
     # molSys.Summary()
     cluster = MolecularSystem()
-    cluster.Read(MOL2File(),"C1.mol2")
+    cluster.Read(MOL2File(),"222Super.mol2")
     bound = cluster.boundary
+    # cluster = ReduceSystemToOneMolecule(cluster)
     cluster = BreakupMoleculeByConnectivity(cluster.molecules[0])
     cluster.boundary = bound
     for mol in cluster.molecules:
         for atom in mol.atoms:
             atom.type = None
-    cluster.Summary()
+
+    # determine min distance
+    NAtoms = 0
+    for mol in cluster.molecules:
+        NAtoms += len(mol.atoms)
+    dists = np.zeros((NAtoms,NAtoms))
+
+    # import math
+    # i = 0
+    # for mol1 in cluster.molecules:
+    #     for atom1 in mol1.atoms:
+    #         i+=1
+    #         j = -1
+    #         for mol2 in cluster.molecules:
+    #             for atom2 in mol2.atoms:
+    #                 j+=1
+    #                 if i>j:
+    #                     continue
+    #                 elif i==j:
+    #                     dists[i,j] = 999
+    #                 else:
+    #                     d = math.pow(atom1.x - atom2.x,2) + math.pow(atom1.y-atom2.y,2) + math.pow(atom1.z-atom2.z,2)
+    #                     d = math.sqrt(d)
+    #                     dists[i,j] = dists[j,i] = d
+    # print(np.min(dists))
+
+
 
     ff_opls = Forcefield.Forcefield("system",
                                     os.path.join("../","oplsaa_2022.10.14", "AtomTypes_Input.txt"),

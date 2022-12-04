@@ -204,7 +204,7 @@ class Forcefield:
         import copy
         newFFMol = copy.deepcopy(refMol)
         for ffAtom,realAtom in zip(newFFMol.atoms,molecule.atoms):
-            ffAtom.x, ffAtom.y, ffAtom.z = realAtom.x, realAtom.y, realAtom.x
+            ffAtom.x, ffAtom.y, ffAtom.z = realAtom.x, realAtom.y, realAtom.z
             realAtom.type = ffAtom.type
         self.molecules.append(newFFMol)
         pass
