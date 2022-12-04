@@ -1,0 +1,30 @@
+include "system.in.init"
+read_data "system.data"
+include "system.in.settings"
+
+molecule given ../Given1.txt
+#molecule fuchs ../FuchsSandoff.txt
+molecule cartz ../CartzHirsch.txt
+
+############# TIME STEP FOR RUNNING ###########
+variable   ts equal  0.5
+##############################
+
+variable T equal 300
+
+fix       fixNVT all nvt temp ${T} ${T} $(dt*100)
+fix       fixGCMC all gcmc 10 1000 150 0 123456789 ${T} 0 2.0 mol cartz pressure 1000000
+
+
+
+variable interval equal 1000
+
+thermo   10
+thermo_style  custom step temp pe ke etotal evdwl epair time atoms
+timestep       ${ts}
+dump            dump1 all custom 100 dump1.lammpstrj id mol type x y z vx vy vz fx fy fz ix
+
+run             1000
+undump          dump1
+write_data      final.data
+

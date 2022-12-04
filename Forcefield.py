@@ -423,6 +423,70 @@ class Forcefield:
         datafile.write("\n")
         datafile.close()
 
+    def WriteMoleculeTemplateFile(self,templateFileName):
+        # Molecule template file is very similar to data file except that:
+        # 1. no Atom Types, Bond Types, etc. no Boundary
+        # 2. no Masses
+        # 3. The Atoms section has been divided into 3 separate sections: Coords, Types, Charges
+        molTemplateFile = None
+        try:
+            molTemplateFile = open(templateFileName,"w")
+        except:
+            error("Cannot open <{}> to write".format(templateFileName))
+
+        totalCounts = [0,0,0,0,0,0]# counts for Atoms, B,A,D,I
+        for mol in self.molecules:
+            totalCounts[1] += len(mol.atoms)
+            totalCounts[2] += len(mol.bonds)
+            totalCounts[3] += len(mol.angles)
+            totalCounts[4] += len(mol.dihedrals)
+            totalCounts[5] += len(mol.impropers)
+
+        molTemplateFile.write("LAMMPS Description\n\n")
+        molTemplateFile.write("     {}  atoms\n".format(totalCounts[1]))
+        molTemplateFile.write("     {}  bonds\n".format(totalCounts[2]))
+        molTemplateFile.write("     {}  angles\n".format(totalCounts[3]))
+        molTemplateFile.write("     {}  dihedrals\n".format(totalCounts[4]))
+        molTemplateFile.write("     {}  impropers\n".format(totalCounts[5]))
+
+        molTemplateFile.write("\nCoords\n\n")
+        for mol in self.molecules:
+            for atom in mol.atoms:
+                atom_type_number = self.forcefieldParameters.atomTypesToNumberMap[atom.type]
+                molTemplateFile.write("{} {} {} {}\n".format(
+                    atom.number,atom.x,atom.y,atom.z))
+
+        molTemplateFile.write("\nTypes\n\n")
+        for mol in self.molecules:
+            for atom in mol.atoms:
+                atom_type_number = self.forcefieldParameters.atomTypesToNumberMap[atom.type]
+                molTemplateFile.write("{} {} \n".format(
+                    atom.number,atom_type_number))
+
+        molTemplateFile.write("\nCharges\n\n")
+        for mol in self.molecules:
+            for atom in mol.atoms:
+                atom_type_number = self.forcefieldParameters.atomTypesToNumberMap[atom.type]
+                molTemplateFile.write("{} {}\n".format(
+                    atom.number,atom.charge))
+
+        for BADI in range(2,6):
+            if totalCounts[BADI] == 0:
+                continue
+            keyword = [None,None,"Bonds","Angles","Dihedrals","Impropers"][BADI]
+            molTemplateFile.write("\n"+keyword+"\n\n")
+            for mol in self.molecules:
+                components = [None,None,mol.bonds,mol.angles,mol.dihedrals,mol.impropers][BADI]
+                for item in components:
+                    # item.type + 1 是因为BADI的类型是从1开始往后排的。
+                    molTemplateFile.write("{} {} ".format(item.number,item.type+1))
+                    for atom_number in item.atoms_numbers:
+                        molTemplateFile.write("{} ".format(atom_number))
+                    molTemplateFile.write("\n")
+
+        molTemplateFile.write("\n")
+        molTemplateFile.close()
+
     def WriteLAMMPSFiles(self,writeInFile=False):
         dataFileName = "{}.data".format(self.name)
         initFileName = "{}.in.init".format(self.name)

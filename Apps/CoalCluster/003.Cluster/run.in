@@ -1,0 +1,39 @@
+include "system.in.init"
+read_data "system.data"
+include "system.in.settings"
+
+thermo_style custom step temp pe etotal press time lx density
+
+
+#minimize 0.0 1.0e-8 100 1000
+
+variable T equal 50
+velocity all create $T 182398412
+
+
+timestep 0.001
+fix  fxnvt all nvt temp $T $T 10.0
+thermo 1
+run  3000
+unfix fxnvt
+write_data relaxed.data
+
+reset_timestep 0
+timestep 1
+fix  fxnpt all npt temp $T $T 100.0 iso 1000000 1000
+
+# dump every 1 ps
+dump d1 all custom 10000 system.lammpstrj id mol type x y z vx vy vz ix iy iz
+
+
+variable    epoch loop 50
+label       loop
+print       "EPOCH = ${epoch}"
+run         100000  # 100 ps each time
+write_restart  system.${epoch}.restart
+if          "${epoch} >= 50" then "jump SELF break"
+next        epoch
+jump        SELF loop
+label       break
+
+write_data final.data
