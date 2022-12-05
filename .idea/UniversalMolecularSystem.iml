@@ -8,7 +8,7 @@
       <excludeFolder url="file://$MODULE_DIR$/Auxiliary/GenerateOPLSForceField/cmake-build-debug/CMakeFiles/ShowIncludes" />
       <excludeFolder url="file://$MODULE_DIR$/Auxiliary/GenerateOPLSForceField/cmake-build-release" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.10 (pt)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.9 (pt)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

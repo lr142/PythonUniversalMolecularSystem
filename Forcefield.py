@@ -224,7 +224,7 @@ class Forcefield:
         ffmol.fixed = fixed
         ffmol.rigid = rigid
         # 第一步，分配原子类型
-        if useCurrentAtomTypes:
+        if not useCurrentAtomTypes:
             for atom in molecule.atoms:
                 atom.type = None
         result = self.atomTypeRecognition.RecognizeAllAtoms(molecule,maxDepth=3,maxIterations=5,debugging=False)
