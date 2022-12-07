@@ -125,8 +125,8 @@ class LAMMPSDATAFile(MolecularFile):
                     atoms_list.append(atom)
                 i += 1
 
-            # Must have a global sorting before post-processing
-            atoms_list.sort(key = lambda a: a.systemwideSerial)
+            # Must have a global sorting before post-processing. Note that convert to numbers at first
+            atoms_list.sort(key = lambda a: int(a.systemwideSerial))
 
             # post processing:
             molecules = [ Molecule() for iMol in range(maxMolID)]

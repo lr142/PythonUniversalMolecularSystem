@@ -1,0 +1,32 @@
+include "system.in.init"
+read_data "system.data"
+include "system.in.settings"
+
+thermo_style custom step temp pe ke press lx ly lz density
+thermo 100
+
+reset_timestep 0
+timestep 1
+
+# dump every 1 ps
+# dump d1 all custom 1000 system.lammpstrj id mol type x y z vx vy vz ix iy iz
+
+variable T equal 313
+variable S equal 50000
+
+velocity all create $T 12314
+
+label loop
+variable P index 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150 160 170 180 190 200 210 220 230 240 250
+print "P = $P"
+fix 1 all rigid/npt molecule temp $T $T 100 iso $P $P 1000
+run $S
+write_data  $P.data
+unfix 1
+
+next P
+jump SELF loop
+
+print "THE END"
+
+

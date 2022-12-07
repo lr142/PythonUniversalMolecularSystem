@@ -57,6 +57,10 @@ class Atom:
 
         # 并非所有属性在所有情况下都可用或相关。 如有必要，文件Reader/Writer和用户可以利用Python的灵活语法，当额外的属性写入到Atom中。
 
+    def XYZ(self):
+        # 返回一个np.array
+        return np.array([self.x,self.y,self.z])
+
     def Copy(self):
         # 返回当前 Atom 的拷贝。 它使用“浅”拷贝。 见本类开始时的注释
         import copy

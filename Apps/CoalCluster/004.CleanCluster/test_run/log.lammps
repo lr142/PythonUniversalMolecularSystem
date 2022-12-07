@@ -1,0 +1,790 @@
+LAMMPS (29 Sep 2021 - Update 3)
+include "system.in.init"
+units real
+atom_style full
+bond_style harmonic
+angle_style harmonic
+dihedral_style opls
+improper_style harmonic
+pair_style lj/cut/coul/long 11.0 11.0
+pair_modify mix geometric
+special_bonds lj/coul 0.0 0.0 0.5
+kspace_style pppm 0.0001
+read_data "system.data"
+Reading data file ...
+  orthogonal box = (0.0000000 0.0000000 0.0000000) to (82.120000 82.120000 82.120000)
+  2 by 2 by 2 MPI processor grid
+  reading atoms ...
+  57120 atoms
+  scanning bonds ...
+  4 = max bonds/atom
+  scanning angles ...
+  6 = max angles/atom
+  scanning dihedrals ...
+  20 = max dihedrals/atom
+  scanning impropers ...
+  2 = max impropers/atom
+  reading bonds ...
+  64480 bonds
+  reading angles ...
+  121360 angles
+  reading dihedrals ...
+  190320 dihedrals
+  reading impropers ...
+  19760 impropers
+Finding 1-2 1-3 1-4 neighbors ...
+  special bond factors lj:    0        0        0.5     
+  special bond factors coul:  0        0        0.5     
+     4 = max # of 1-2 neighbors
+     9 = max # of 1-3 neighbors
+    22 = max # of 1-4 neighbors
+    24 = max # of special neighbors
+  special bonds CPU = 0.006 seconds
+  read_data CPU = 0.756 seconds
+include "system.in.settings"
+pair_coeff 1 1 0.0 0.0
+pair_coeff 2 2 0.1554 3.16557
+pair_coeff 3 3 0.066 3.5
+pair_coeff 4 4 0.066 3.5
+pair_coeff 5 5 0.066 3.5
+pair_coeff 6 6 0.066 3.5
+pair_coeff 7 7 0.066 3.5
+pair_coeff 8 8 0.03 2.5
+pair_coeff 9 9 0.076 3.55
+pair_coeff 10 10 0.076 3.55
+pair_coeff 11 11 0.076 3.55
+pair_coeff 12 12 0.03 2.42
+pair_coeff 13 13 0.07 3.55
+pair_coeff 14 14 0.07 3.55
+pair_coeff 15 15 0.03 2.42
+pair_coeff 16 16 0.105 3.75
+pair_coeff 17 17 0.21 2.96
+pair_coeff 18 18 0.17 3.25
+pair_coeff 19 19 0.17 3.25
+pair_coeff 20 20 0.17 3.25
+pair_coeff 21 21 0.0 0.0
+pair_coeff 22 22 0.0 0.0
+pair_coeff 23 23 0.105 3.75
+pair_coeff 24 24 0.21 2.96
+pair_coeff 25 25 0.17 3.0
+pair_coeff 26 26 0.0 0.0
+pair_coeff 27 27 0.105 3.75
+pair_coeff 28 28 0.21 2.96
+pair_coeff 29 29 0.066 3.5
+pair_coeff 30 30 0.066 3.5
+pair_coeff 31 31 0.066 3.5
+pair_coeff 32 32 0.066 3.5
+pair_coeff 33 33 0.076 3.55
+pair_coeff 34 34 0.17 3.25
+pair_coeff 35 35 0.066 3.5
+pair_coeff 36 36 0.066 3.5
+pair_coeff 37 37 0.066 3.5
+pair_coeff 38 38 0.066 3.5
+pair_coeff 39 39 0.03 2.5
+pair_coeff 40 40 0.07 3.55
+pair_coeff 41 41 0.17 3.07
+pair_coeff 42 42 0.0 0.0
+pair_coeff 43 43 0.105 3.75
+pair_coeff 44 44 0.21 2.96
+pair_coeff 45 45 0.14 2.9
+pair_coeff 46 46 0.066 3.5
+pair_coeff 47 47 0.066 3.5
+pair_coeff 48 48 0.066 3.5
+pair_coeff 49 49 0.066 3.5
+pair_coeff 50 50 0.03 2.5
+pair_coeff 51 51 0.07 3.55
+pair_coeff 52 52 0.17 3.12
+pair_coeff 53 53 0.0 0.0
+pair_coeff 54 54 0.03 2.5
+pair_coeff 55 55 0.066 3.5
+pair_coeff 56 56 0.066 3.5
+pair_coeff 57 57 0.066 3.5
+pair_coeff 58 58 0.17 3.25
+pair_coeff 59 59 0.07 3.55
+pair_coeff 60 60 0.07 3.55
+pair_coeff 61 61 0.25 3.55
+pair_coeff 62 62 0.07 3.55
+pair_coeff 63 63 0.17 3.3
+pair_coeff 64 64 0.066 3.5
+pair_coeff 65 65 0.0 0.0
+pair_coeff 66 66 0.066 3.5
+pair_coeff 67 67 0.015 2.5
+pair_coeff 68 68 0.0005 4.07
+pair_coeff 69 69 0.71 4.02
+bond_coeff 1 350.0 1.51
+bond_coeff 2 570.0 1.229
+bond_coeff 3 450.0 1.364
+bond_coeff 4 317.0 1.522
+bond_coeff 5 214.0 1.327
+bond_coeff 6 300.0 1.79
+bond_coeff 7 490.0 1.335
+bond_coeff 8 317.0 1.522
+bond_coeff 9 340.0 1.09
+bond_coeff 10 410.0 1.444
+bond_coeff 11 400.0 1.49
+bond_coeff 12 656.0 1.25
+bond_coeff 13 457.0 1.358
+bond_coeff 14 553.0 0.945
+bond_coeff 15 320.0 1.41
+bond_coeff 16 250.0 1.47
+bond_coeff 17 400.0 1.38
+bond_coeff 18 320.0 1.45
+bond_coeff 19 450.0 1.37
+bond_coeff 20 450.0 1.364
+bond_coeff 21 553.0 0.945
+bond_coeff 22 268.0 1.529
+bond_coeff 23 222.0 1.81
+bond_coeff 24 320.0 1.41
+bond_coeff 25 245.0 1.781
+bond_coeff 26 337.0 1.449
+bond_coeff 27 382.0 1.448
+bond_coeff 28 340.0 1.09
+bond_coeff 29 317.0 1.51
+bond_coeff 30 317.0 1.51
+bond_coeff 31 367.0 1.471
+bond_coeff 32 337.0 1.449
+bond_coeff 33 166.0 2.038
+bond_coeff 34 250.0 1.73
+bond_coeff 35 250.0 1.76
+bond_coeff 36 250.0 1.76
+bond_coeff 37 250.0 1.47
+bond_coeff 38 200.0 1.69
+bond_coeff 39 320.0 1.45
+bond_coeff 40 320.0 1.45
+bond_coeff 41 450.0 1.37
+bond_coeff 42 450.0 1.364
+bond_coeff 43 300.0 1.725
+bond_coeff 44 300.0 1.725
+bond_coeff 45 434.0 1.01
+bond_coeff 46 427.0 1.381
+bond_coeff 47 600.0 1.0
+bond_coeff 48 350.0 1.445
+bond_coeff 49 434.0 1.01
+bond_coeff 50 481.0 1.34
+bond_coeff 51 434.0 1.01
+bond_coeff 52 434.0 1.01
+bond_coeff 53 340.0 1.08
+bond_coeff 54 549.0 1.34
+bond_coeff 55 427.0 1.433
+bond_coeff 56 469.0 1.4
+bond_coeff 57 367.0 1.08
+bond_coeff 58 400.0 1.45
+bond_coeff 59 483.0 1.339
+bond_coeff 60 500.0 1.32
+angle_coeff 1 80.0 121.4
+angle_coeff 2 80.0 126.0
+angle_coeff 3 80.0 121.0
+angle_coeff 4 70.0 108.0
+angle_coeff 5 70.0 116.0
+angle_coeff 6 80.0 117.2
+angle_coeff 7 80.0 120.4
+angle_coeff 8 81.0 111.4
+angle_coeff 9 83.0 123.4
+angle_coeff 10 75.0 109.0
+angle_coeff 11 75.0 119.0
+angle_coeff 12 70.0 114.2
+angle_coeff 13 70.0 116.6
+angle_coeff 14 70.0 116.6
+angle_coeff 15 80.0 122.9
+angle_coeff 16 81.0 111.4
+angle_coeff 17 70.0 116.0
+angle_coeff 18 80.0 120.4
+angle_coeff 19 35.0 115.0
+angle_coeff 20 35.0 115.0
+angle_coeff 21 35.0 123.0
+angle_coeff 22 40.0 114.0
+angle_coeff 23 40.0 115.0
+angle_coeff 24 40.0 115.0
+angle_coeff 25 70.0 115.5
+angle_coeff 26 80.0 125.3
+angle_coeff 27 35.0 115.0
+angle_coeff 28 70.0 115.5
+angle_coeff 29 70.0 116.0
+angle_coeff 30 70.0 120.0
+angle_coeff 31 80.0 120.4
+angle_coeff 32 81.0 111.4
+angle_coeff 33 85.0 120.0
+angle_coeff 34 70.0 117.0
+angle_coeff 35 70.0 117.0
+angle_coeff 36 80.0 126.0
+angle_coeff 37 80.0 126.0
+angle_coeff 38 35.0 122.0
+angle_coeff 39 80.0 122.5
+angle_coeff 40 35.0 113.0
+angle_coeff 41 55.0 108.5
+angle_coeff 42 49.0 105.4
+angle_coeff 43 35.0 109.0
+angle_coeff 44 35.0 113.0
+angle_coeff 45 63.0 111.1
+angle_coeff 46 50.0 109.5
+angle_coeff 47 58.35 112.7
+angle_coeff 48 63.0 111.1
+angle_coeff 49 50.0 114.7
+angle_coeff 50 50.0 109.5
+angle_coeff 51 50.0 109.5
+angle_coeff 52 69.0 109.8
+angle_coeff 53 69.0 109.8
+angle_coeff 54 78.0 111.7
+angle_coeff 55 50.0 109.5
+angle_coeff 56 63.0 110.1
+angle_coeff 57 80.0 109.7
+angle_coeff 58 50.0 114.7
+angle_coeff 59 56.2 109.47
+angle_coeff 60 80.0 111.2
+angle_coeff 61 33.0 107.8
+angle_coeff 62 35.0 109.5
+angle_coeff 63 35.0 109.5
+angle_coeff 64 35.0 109.5
+angle_coeff 65 35.0 109.5
+angle_coeff 66 35.0 109.5
+angle_coeff 67 35.0 109.5
+angle_coeff 68 37.5 110.7
+angle_coeff 69 51.0 107.6
+angle_coeff 70 35.0 109.5
+angle_coeff 71 63.0 111.1
+angle_coeff 72 63.0 112.4
+angle_coeff 73 35.0 109.5
+angle_coeff 74 40.0 109.5
+angle_coeff 75 40.0 109.5
+angle_coeff 76 50.0 109.5
+angle_coeff 77 50.0 109.5
+angle_coeff 78 50.0 114.7
+angle_coeff 79 63.0 112.0
+angle_coeff 80 63.0 114.0
+angle_coeff 81 80.0 111.2
+angle_coeff 82 35.0 109.5
+angle_coeff 83 80.0 111.2
+angle_coeff 84 80.0 111.2
+angle_coeff 85 35.0 109.5
+angle_coeff 86 63.0 110.1
+angle_coeff 87 65.0 109.0
+angle_coeff 88 62.0 98.9
+angle_coeff 89 68.0 103.7
+angle_coeff 90 62.0 104.2
+angle_coeff 91 62.0 104.2
+angle_coeff 92 60.0 109.5
+angle_coeff 93 83.0 116.9
+angle_coeff 94 75.0 111.0
+angle_coeff 95 75.0 111.0
+angle_coeff 96 75.0 111.0
+angle_coeff 97 75.0 111.0
+angle_coeff 98 83.0 116.9
+angle_coeff 99 70.0 126.4
+angle_coeff 100 46.0 115.7
+angle_coeff 101 50.0 118.0
+angle_coeff 102 50.0 121.9
+angle_coeff 103 70.0 112.0
+angle_coeff 104 70.0 108.6
+angle_coeff 105 35.0 110.2
+angle_coeff 106 35.0 119.8
+angle_coeff 107 35.0 120.0
+angle_coeff 108 38.0 118.4
+angle_coeff 109 35.0 119.8
+angle_coeff 110 50.0 118.0
+angle_coeff 111 50.0 121.9
+angle_coeff 112 70.0 118.0
+angle_coeff 113 75.0 109.47
+angle_coeff 114 51.8 107.2
+angle_coeff 115 63.0 111.1
+angle_coeff 116 35.0 109.5
+angle_coeff 117 43.6 106.4
+angle_coeff 118 35.0 116.0
+angle_coeff 119 50.0 116.0
+angle_coeff 120 50.0 116.0
+angle_coeff 121 63.0 112.0
+angle_coeff 122 70.0 119.7
+angle_coeff 123 70.0 130.0
+angle_coeff 124 35.0 114.5
+angle_coeff 125 35.0 117.0
+angle_coeff 126 35.0 117.0
+angle_coeff 127 35.0 119.7
+angle_coeff 128 60.0 114.0
+angle_coeff 129 35.0 120.0
+angle_coeff 130 70.0 123.0
+angle_coeff 131 70.0 123.0
+angle_coeff 132 70.0 124.0
+angle_coeff 133 75.0 121.5
+angle_coeff 134 85.0 119.4
+angle_coeff 135 85.0 120.7
+angle_coeff 136 35.0 123.3
+angle_coeff 137 85.0 117.0
+angle_coeff 138 85.0 119.7
+angle_coeff 139 70.0 119.7
+angle_coeff 140 63.0 120.0
+angle_coeff 141 70.0 120.0
+angle_coeff 142 70.0 120.0
+angle_coeff 143 70.0 120.0
+angle_coeff 144 70.0 120.0
+angle_coeff 145 70.0 120.0
+angle_coeff 146 70.0 124.0
+angle_coeff 147 75.0 120.0
+angle_coeff 148 85.0 119.4
+angle_coeff 149 85.0 120.0
+angle_coeff 150 35.0 119.1
+angle_coeff 151 35.0 120.0
+angle_coeff 152 35.0 120.0
+angle_coeff 153 70.0 120.0
+angle_coeff 154 35.0 116.0
+angle_coeff 155 70.0 116.0
+angle_coeff 156 70.0 116.0
+angle_coeff 157 70.0 120.0
+angle_coeff 158 70.0 121.5
+angle_coeff 159 70.0 124.0
+angle_coeff 160 75.0 120.0
+angle_coeff 161 50.0 113.0
+angle_coeff 162 43.6 109.5
+angle_coeff 163 55.0 114.0
+angle_coeff 164 70.0 120.5
+angle_coeff 165 35.0 113.0
+angle_coeff 166 50.0 118.0
+angle_coeff 167 70.0 117.0
+angle_coeff 168 70.0 120.5
+angle_coeff 169 70.0 117.0
+angle_coeff 170 70.0 117.0
+dihedral_coeff 1 1.6 3.2 0.0 0.0
+dihedral_coeff 2 0.0 0.5 0.0 0.0
+dihedral_coeff 3 0.0 0.0 0.0 0.0
+dihedral_coeff 4 0.0 0.0 0.0 0.0
+dihedral_coeff 5 0.7 -1.5 0.0 0.0
+dihedral_coeff 6 -0.5 0.2 0.0 0.0
+dihedral_coeff 7 0.8 -0.76 0.0 0.0
+dihedral_coeff 8 -0.9 0.3 0.0 0.0
+dihedral_coeff 9 0.0 0.0 0.3 0.0
+dihedral_coeff 10 3.0 5.5 0.0 0.0
+dihedral_coeff 11 0.0 5.0 0.0 0.0
+dihedral_coeff 12 1.5 5.5 0.0 0.0
+dihedral_coeff 13 -2.0 5.0 0.0 0.0
+dihedral_coeff 14 1.5 5.5 0.0 0.0
+dihedral_coeff 15 4.0 5.0 0.0 0.0
+dihedral_coeff 16 0.0 0.0 0.085 0.0
+dihedral_coeff 17 0.0 0.0 0.0 0.0
+dihedral_coeff 18 0.0 0.0 0.0 0.0
+dihedral_coeff 19 -0.65 0.0 0.0 0.0
+dihedral_coeff 20 0.0 0.82 0.0 0.0
+dihedral_coeff 21 0.0 0.0 0.0 0.0
+dihedral_coeff 22 0.0 0.0 0.0 0.0
+dihedral_coeff 23 0.0 0.546 0.0 0.0
+dihedral_coeff 24 0.0 1.412 0.0 0.0
+dihedral_coeff 25 5.26 0.82 0.0 0.0
+dihedral_coeff 26 0.0 0.0 0.0 0.0
+dihedral_coeff 27 1.454 -0.144 -0.775 0.0
+dihedral_coeff 28 0.0 0.0 0.275 0.0
+dihedral_coeff 29 0.0 0.0 -0.553 0.0
+dihedral_coeff 30 0.0 0.0 0.132 0.0
+dihedral_coeff 31 0.0 0.0 0.0 0.0
+dihedral_coeff 32 0.0 0.0 0.36 0.0
+dihedral_coeff 33 1.173 0.189 -1.2 0.0
+dihedral_coeff 34 0.65 0.0 0.0 0.0
+dihedral_coeff 35 1.816 1.222 1.581 0.0
+dihedral_coeff 36 0.0 0.0 0.0 0.0
+dihedral_coeff 37 0.0 0.0 0.0 0.0
+dihedral_coeff 38 0.0 0.0 0.36 0.0
+dihedral_coeff 39 0.0 0.0 0.275 0.0
+dihedral_coeff 40 0.0 0.82 0.0 0.0
+dihedral_coeff 41 0.0 0.82 0.0 0.0
+dihedral_coeff 42 0.0 0.0 0.0 0.0
+dihedral_coeff 43 0.0 5.124 0.0 0.0
+dihedral_coeff 44 0.0 5.0 0.0 0.0
+dihedral_coeff 45 4.669 5.124 0.0 0.0
+dihedral_coeff 46 1.5 5.0 0.0 0.0
+dihedral_coeff 47 -2.0 5.0 0.0 0.0
+dihedral_coeff 48 4.669 5.124 0.0 0.0
+dihedral_coeff 49 4.0 5.0 0.0 0.0
+dihedral_coeff 50 0.4 4.9 0.0 0.0
+dihedral_coeff 51 0.0 4.9 0.0 0.0
+dihedral_coeff 52 0.0 6.603 0.0 0.0
+dihedral_coeff 53 0.0 6.089 0.0 0.0
+dihedral_coeff 54 0.0 4.9 0.0 0.0
+dihedral_coeff 55 0.0 6.089 0.0 0.0
+dihedral_coeff 56 0.0 6.089 0.0 0.0
+dihedral_coeff 57 2.3 6.089 0.0 0.0
+dihedral_coeff 58 0.0 4.9 0.0 0.0
+dihedral_coeff 59 4.542 6.603 1.045 0.0
+dihedral_coeff 60 2.3 6.089 0.0 0.0
+dihedral_coeff 61 0.0 4.9 0.0 0.0
+dihedral_coeff 62 2.3 6.089 0.0 0.0
+dihedral_coeff 63 2.3 6.089 0.0 0.0
+dihedral_coeff 64 0.0 4.9 0.0 0.0
+dihedral_coeff 65 2.3 6.089 0.0 0.0
+dihedral_coeff 66 4.6 0.0 0.0 0.0
+dihedral_coeff 67 0.0 4.9 0.0 0.0
+dihedral_coeff 68 2.3 6.089 0.0 0.0
+dihedral_coeff 69 0.0 4.9 0.0 0.0
+dihedral_coeff 70 0.0 4.9 0.0 0.0
+dihedral_coeff 71 0.0 4.9 0.0 0.0
+dihedral_coeff 72 2.3 6.089 0.0 0.0
+dihedral_coeff 73 0.9 0.23 -0.505 0.0
+dihedral_coeff 74 0.0 0.0 0.0 0.0
+dihedral_coeff 75 2.5 6.0 0.0 0.0
+dihedral_coeff 76 3.2 -3.0 0.0 0.0
+dihedral_coeff 77 0.0 0.0 0.0 0.0
+dihedral_coeff 78 2.0 0.0 0.0 0.0
+dihedral_coeff 79 0.0 2.1 0.0 0.0
+dihedral_coeff 80 0.0 2.1 0.0 0.0
+dihedral_coeff 81 0.0 0.2 0.0 0.0
+dihedral_coeff 82 0.0 2.1 0.0 0.0
+dihedral_coeff 83 0.0 1.1 0.0 0.0
+dihedral_coeff 84 0.0 0.2 0.0 0.0
+dihedral_coeff 85 0.0 14.0 0.0 0.0
+dihedral_coeff 86 0.0 14.0 0.0 0.0
+dihedral_coeff 87 0.0 14.0 0.0 0.0
+dihedral_coeff 88 0.0 14.0 0.0 0.0
+dihedral_coeff 89 -0.356 -0.174 0.492 0.0
+dihedral_coeff 90 0.0 0.0 0.352 0.0
+dihedral_coeff 91 -0.9 0.0 0.0 0.0
+dihedral_coeff 92 -0.9 0.0 0.0 0.0
+dihedral_coeff 93 0.0 0.0 0.3 0.0
+dihedral_coeff 94 0.0 0.0 0.3 0.0
+dihedral_coeff 95 5.519 -6.7 0.581 0.0
+dihedral_coeff 96 2.722 -5.154 0.0 0.0
+dihedral_coeff 97 0.0 1.682 0.0 0.0
+dihedral_coeff 98 0.0 1.682 0.0 0.0
+dihedral_coeff 99 3.0 3.0 0.0 0.0
+dihedral_coeff 100 -4.344 -1.714 0.0 0.0
+dihedral_coeff 101 1.711 -0.5 0.663 0.0
+dihedral_coeff 102 1.428 0.086 0.029 0.0
+dihedral_coeff 103 -0.55 0.0 1.0 0.0
+dihedral_coeff 104 -6.18 0.0 0.0 0.0
+dihedral_coeff 105 -2.06 -0.313 0.315 0.0
+dihedral_coeff 106 -4.344 -1.714 0.0 0.0
+dihedral_coeff 107 -9.0 2.0 0.8 0.0
+dihedral_coeff 108 0.0 0.0 -0.1 0.0
+dihedral_coeff 109 -1.697 -0.456 0.585 0.0
+dihedral_coeff 110 9.508 0.0 0.0 0.0
+dihedral_coeff 111 -1.552 0.0 0.0 0.0
+dihedral_coeff 112 4.319 0.0 0.0 0.0
+dihedral_coeff 113 8.0 0.0 0.0 0.0
+dihedral_coeff 114 6.28 -1.467 2.03 0.0
+dihedral_coeff 115 0.0 0.0 0.468 0.0
+dihedral_coeff 116 1.3 -0.05 0.2 0.0
+dihedral_coeff 117 2.619 -0.62 0.258 0.0
+dihedral_coeff 118 0.0 0.0 0.4 0.0
+dihedral_coeff 119 2.392 -0.674 0.55 0.0
+dihedral_coeff 120 0.845 -0.962 0.713 0.0
+dihedral_coeff 121 0.0 0.0 0.3 0.0
+dihedral_coeff 122 2.732 -0.229 0.485 0.0
+dihedral_coeff 123 0.0 0.0 0.452 0.0
+dihedral_coeff 124 -0.55 0.0 0.0 0.0
+dihedral_coeff 125 0.0 0.0 0.468 0.0
+dihedral_coeff 126 -0.25 0.0 0.0 0.0
+dihedral_coeff 127 2.0 0.0 0.0 0.0
+dihedral_coeff 128 0.0 0.0 0.4 0.0
+dihedral_coeff 129 11.035 -0.968 0.27 0.0
+dihedral_coeff 130 -1.013 -0.709 0.473 0.0
+dihedral_coeff 131 -0.8 0.0 0.0 0.0
+dihedral_coeff 132 0.0 0.0 0.464 0.0
+dihedral_coeff 133 0.845 -0.962 0.713 0.0
+dihedral_coeff 134 0.0 0.0 0.3 0.0
+dihedral_coeff 135 0.0 0.0 0.366 0.0
+dihedral_coeff 136 0.0 0.0 0.462 0.0
+dihedral_coeff 137 0.0 0.0 0.384 0.0
+dihedral_coeff 138 1.0 0.0 0.0 0.0
+dihedral_coeff 139 0.925 -0.576 0.677 0.0
+dihedral_coeff 140 1.941 -0.836 0.935 0.0
+dihedral_coeff 141 0.0 0.0 0.647 0.0
+dihedral_coeff 142 0.0 0.0 0.558 0.0
+dihedral_coeff 143 0.0 0.0 0.647 0.0
+dihedral_coeff 144 -0.521 -2.018 1.996 0.0
+dihedral_coeff 145 -0.5 -1.5 1.0 0.0
+dihedral_coeff 146 -1.22 -0.126 0.422 0.0
+dihedral_coeff 147 0.65 -0.25 0.67 0.0
+dihedral_coeff 148 0.0 0.0 0.76 0.0
+dihedral_coeff 149 0.0 0.0 0.198 0.0
+dihedral_coeff 150 0.0 0.0 0.76 0.0
+dihedral_coeff 151 0.0 0.0 0.76 0.0
+dihedral_coeff 152 0.0 0.0 0.0 0.0
+dihedral_coeff 153 -2.365 0.912 -0.85 0.0
+dihedral_coeff 154 -1.737 1.251 -3.501 0.0
+dihedral_coeff 155 0.0 0.0 0.0 0.0
+dihedral_coeff 156 0.0 0.462 0.0 0.0
+dihedral_coeff 157 4.753 -0.734 0.0 0.0
+dihedral_coeff 158 0.0 0.0 0.0 0.0
+dihedral_coeff 159 0.0 0.0 0.0 0.0
+dihedral_coeff 160 0.0 0.0 0.0 0.0
+dihedral_coeff 161 0.0 0.0 0.0 0.0
+dihedral_coeff 162 0.0 0.0 0.0 0.0
+dihedral_coeff 163 0.416 -0.128 0.695 0.0
+dihedral_coeff 164 -0.19 -0.417 0.418 0.0
+dihedral_coeff 165 0.0 0.0 0.56 0.0
+dihedral_coeff 166 0.0 0.0 0.4 0.0
+dihedral_coeff 167 0.0 0.0 0.56 0.0
+dihedral_coeff 168 1.711 -0.5 0.663 0.0
+dihedral_coeff 169 0.0 0.0 0.468 0.0
+dihedral_coeff 170 0.5 0.0 0.0 0.0
+dihedral_coeff 171 2.817 -0.169 0.543 0.0
+dihedral_coeff 172 0.346 0.405 -0.904 0.0
+dihedral_coeff 173 0.0 0.0 0.3 0.0
+dihedral_coeff 174 0.0 0.0 0.318 0.0
+dihedral_coeff 175 0.0 0.0 -0.372 0.0
+dihedral_coeff 176 0.0 -8.0 0.0 0.0
+dihedral_coeff 177 0.0 -8.0 0.0 0.0
+dihedral_coeff 178 0.0 0.0 0.0 0.0
+dihedral_coeff 179 0.0 0.0 0.0 0.0
+dihedral_coeff 180 -0.5 0.5 -0.5 0.0
+dihedral_coeff 181 0.0 -0.4 0.0 0.0
+dihedral_coeff 182 0.0 0.0 0.0 0.0
+dihedral_coeff 183 1.438 -0.124 0.264 0.0
+dihedral_coeff 184 0.0 0.0 0.347 0.0
+dihedral_coeff 185 0.0 0.0 0.302 0.0
+dihedral_coeff 186 0.0 0.0 0.261 0.0
+dihedral_coeff 187 0.0 0.0 0.462 0.0
+dihedral_coeff 188 0.0 -7.414 1.705 0.0
+dihedral_coeff 189 0.0 0.6 0.0 0.0
+dihedral_coeff 190 1.6 5.1 0.0 0.0
+dihedral_coeff 191 0.0 0.0 0.3 0.0
+dihedral_coeff 192 0.0 0.0 0.3 0.0
+dihedral_coeff 193 0.65 -0.25 0.67 0.0
+dihedral_coeff 194 0.0 0.0 0.76 0.0
+dihedral_coeff 195 -3.5 3.0 0.0 0.0
+dihedral_coeff 196 0.0 2.5 0.0 0.0
+dihedral_coeff 197 0.0 3.0 0.0 0.0
+dihedral_coeff 198 0.4 5.5 0.0 0.0
+dihedral_coeff 199 3.0 3.0 0.0 0.0
+dihedral_coeff 200 0.0 2.1 0.0 0.0
+dihedral_coeff 201 0.0 2.1 0.0 0.0
+dihedral_coeff 202 0.0 2.1 0.0 0.0
+dihedral_coeff 203 0.0 2.1 0.0 0.0
+dihedral_coeff 204 0.0 0.0 0.3 0.0
+dihedral_coeff 205 0.0 0.0 0.3 0.0
+dihedral_coeff 206 0.0 0.0 0.3 0.0
+dihedral_coeff 207 -7.582 3.431 3.198 0.0
+dihedral_coeff 208 0.0 2.03 0.0 0.0
+dihedral_coeff 209 0.0 -8.0 0.0 0.0
+dihedral_coeff 210 0.0 -8.0 0.0 0.0
+dihedral_coeff 211 0.0 14.0 0.0 0.0
+dihedral_coeff 212 0.0 14.0 0.0 0.0
+dihedral_coeff 213 0.0 14.0 0.0 0.0
+dihedral_coeff 214 0.0 14.0 0.0 0.0
+dihedral_coeff 215 0.0 14.0 0.0 0.0
+dihedral_coeff 216 0.0 14.0 0.0 0.0
+dihedral_coeff 217 0.0 14.0 0.0 0.0
+dihedral_coeff 218 0.0 14.0 0.0 0.0
+dihedral_coeff 219 0.0 14.0 0.0 0.0
+dihedral_coeff 220 -1.6 14.0 0.0 0.0
+dihedral_coeff 221 0.0 14.0 0.0 0.0
+dihedral_coeff 222 0.0 14.0 0.0 0.0
+dihedral_coeff 223 0.0 14.0 0.0 0.0
+dihedral_coeff 224 0.205 -0.531 0.0 0.0
+dihedral_coeff 225 0.0 0.0 -0.372 0.0
+dihedral_coeff 226 0.0 0.0 -0.372 0.0
+dihedral_coeff 227 1.241 3.353 -0.286 0.0
+dihedral_coeff 228 0.0 7.25 0.0 0.0
+dihedral_coeff 229 0.0 7.25 0.0 0.0
+dihedral_coeff 230 0.0 7.25 0.0 0.0
+dihedral_coeff 231 0.0 7.25 0.0 0.0
+dihedral_coeff 232 0.0 7.25 0.0 0.0
+dihedral_coeff 233 0.0 7.25 0.0 0.0
+dihedral_coeff 234 0.0 7.25 0.0 0.0
+dihedral_coeff 235 0.0 7.25 0.0 0.0
+dihedral_coeff 236 0.0 7.25 0.0 0.0
+dihedral_coeff 237 0.0 7.25 0.0 0.0
+dihedral_coeff 238 0.0 7.25 0.0 0.0
+dihedral_coeff 239 0.0 7.25 0.0 0.0
+dihedral_coeff 240 0.0 7.25 0.0 0.0
+dihedral_coeff 241 0.0 7.25 0.0 0.0
+dihedral_coeff 242 0.0 0.0 0.0 0.0
+dihedral_coeff 243 0.0 7.25 0.0 0.0
+dihedral_coeff 244 0.0 7.25 0.0 0.0
+dihedral_coeff 245 0.0 7.25 0.0 0.0
+dihedral_coeff 246 0.0 7.25 0.0 0.0
+dihedral_coeff 247 0.0 7.25 0.0 0.0
+dihedral_coeff 248 0.0 7.25 0.0 0.0
+dihedral_coeff 249 1.816 1.222 1.581 0.0
+dihedral_coeff 250 0.0 0.82 0.0 0.0
+dihedral_coeff 251 1.0 0.0 0.0 0.0
+dihedral_coeff 252 6.28 -1.467 2.03 0.0
+dihedral_coeff 253 1.428 0.086 0.029 0.0
+dihedral_coeff 254 1.438 -0.124 0.264 0.0
+dihedral_coeff 255 1.3 -0.05 0.2 0.0
+dihedral_coeff 256 1.3 -0.05 0.2 0.0
+improper_coeff 1 10.5 0.000000
+improper_coeff 2 10.5 0.000000
+improper_coeff 3 1.0 0.000000
+improper_coeff 4 15.0 0.000000
+improper_coeff 5 1.1 0.000000
+
+thermo_style custom step temp pe ke press lx ly lz density
+thermo 100
+
+reset_timestep 0
+timestep 1
+
+# dump every 1 ps
+dump d1 all custom 1000 system.lammpstrj id mol type x y z vx vy vz ix iy iz
+
+variable T equal 300
+variable S equal 10000
+
+velocity all create $T 213456
+velocity all create 300 213456
+fix  f0 all nvt temp $T $T 100
+fix  f0 all nvt temp 300 $T 100
+fix  f0 all nvt temp 300 300 100
+run         $S
+run         10000
+PPPM initialization ...
+  using 12-bit tables for long-range coulomb (../kspace.cpp:340)
+  G vector (1/distance) = 0.18519603
+  grid = 20 20 20
+  stencil order = 5
+  estimated absolute RMS force accuracy = 0.037228537
+  estimated relative force accuracy = 0.00011211263
+  using double precision KISS FFT
+  3d grid and FFT values/proc = 3375 1200
+Neighbor list info ...
+  update every 1 steps, delay 10 steps, check yes
+  max neighbors/atom: 2000, page size: 100000
+  master list distance cutoff = 13
+  ghost atom cutoff = 13
+  binsize = 6.5, bins = 13 13 13
+  1 neighbor lists, perpetual/occasional/extra = 1 0 0
+  (1) pair lj/cut/coul/long, perpetual
+      attributes: half, newton on
+      pair build: half/bin/newton
+      stencil: half/bin/3d
+      bin: standard
+Per MPI rank memory allocation (min/avg/max) = 50.53 | 50.88 | 50.94 Mbytes
+Step Temp PotEng KinEng Press Lx Ly Lz Density 
+       0          300     82660.57    51078.267    4867.9417        82.12        82.12        82.12    1.2755844 
+     100     299.8225    82725.552    51048.045     5165.262        82.12        82.12        82.12    1.2755844 
+     200    298.78696    82911.872    50871.734    5355.9843        82.12        82.12        82.12    1.2755844 
+     300    298.50814    82859.972    50824.261    4898.3546        82.12        82.12        82.12    1.2755844 
+     400    299.14085    82608.212    50931.987    5189.9401        82.12        82.12        82.12    1.2755844 
+     500    298.77167    82552.368     50869.13    4602.4666        82.12        82.12        82.12    1.2755844 
+     600    299.81279     82443.06    51046.392    5268.1967        82.12        82.12        82.12    1.2755844 
+     700    300.00866    82814.324    51079.741    5021.9728        82.12        82.12        82.12    1.2755844 
+     800    300.85721    82819.406    51224.215    4752.9031        82.12        82.12        82.12    1.2755844 
+     900    299.64664    82855.105    51018.103    5253.4856        82.12        82.12        82.12    1.2755844 
+    1000    299.32676    82608.902     50963.64    4822.9072        82.12        82.12        82.12    1.2755844 
+    1100    300.71847    82296.955    51200.594    5367.9225        82.12        82.12        82.12    1.2755844 
+    1200    299.94385    82494.724    51068.707    5076.4853        82.12        82.12        82.12    1.2755844 
+    1300    302.13899    82318.281    51442.453    4924.2557        82.12        82.12        82.12    1.2755844 
+    1400    300.05155    82869.944    51087.043     5378.641        82.12        82.12        82.12    1.2755844 
+    1500    299.69759    82968.647    51026.778     5016.906        82.12        82.12        82.12    1.2755844 
+    1600    300.29268    82615.886    51128.099     5148.707        82.12        82.12        82.12    1.2755844 
+    1700    299.36329    82456.771    50969.859    4771.9785        82.12        82.12        82.12    1.2755844 
+    1800    300.96142    82193.597    51241.958    5174.2511        82.12        82.12        82.12    1.2755844 
+    1900    299.56277    82762.724    51003.823    5049.9782        82.12        82.12        82.12    1.2755844 
+    2000    301.23201    82745.232    51288.029    4882.6813        82.12        82.12        82.12    1.2755844 
+    2100     300.0688    82843.557    51089.981     5177.624        82.12        82.12        82.12    1.2755844 
+    2200    300.33994    82628.443    51136.145     4753.602        82.12        82.12        82.12    1.2755844 
+    2300    299.50289     82697.14    50993.628    4602.1004        82.12        82.12        82.12    1.2755844 
+    2400     299.4023    82708.895    50976.501    5087.1082        82.12        82.12        82.12    1.2755844 
+    2500    299.41699    82841.688    50979.003    5126.3225        82.12        82.12        82.12    1.2755844 
+    2600    300.59642    82900.795    51179.813    5781.2183        82.12        82.12        82.12    1.2755844 
+    2700     300.2047    82979.926    51113.119    5235.0961        82.12        82.12        82.12    1.2755844 
+    2800    301.00469    82443.715    51249.326    4557.6776        82.12        82.12        82.12    1.2755844 
+    2900    299.07723    82573.475    50921.155    4969.9788        82.12        82.12        82.12    1.2755844 
+    3000    300.18518    82475.677    51109.796    5064.1898        82.12        82.12        82.12    1.2755844 
+    3100    299.36679    82892.329    50970.455    5100.3484        82.12        82.12        82.12    1.2755844 
+    3200    301.93652    82731.234     51407.98    5186.7166        82.12        82.12        82.12    1.2755844 
+    3300     301.3655    82949.777    51310.757    5523.8359        82.12        82.12        82.12    1.2755844 
+    3400    301.27278    82602.089    51294.971    4984.6272        82.12        82.12        82.12    1.2755844 
+    3500    300.15399    82459.873    51104.485    4966.9471        82.12        82.12        82.12    1.2755844 
+    3600    299.38057    82528.483    50972.803    4880.8374        82.12        82.12        82.12    1.2755844 
+    3700    301.03751    82481.389    51254.915    5439.0232        82.12        82.12        82.12    1.2755844 
+    3800    300.23856    82861.442    51118.885     4679.092        82.12        82.12        82.12    1.2755844 
+    3900    300.27604    82795.347    51125.265    5269.3603        82.12        82.12        82.12    1.2755844 
+    4000    299.19224    82453.085    50940.736    4955.4572        82.12        82.12        82.12    1.2755844 
+    4100    298.61893    82499.065    50843.125    4536.0994        82.12        82.12        82.12    1.2755844 
+    4200    299.41915    82616.816    50979.371    5280.2323        82.12        82.12        82.12    1.2755844 
+    4300    301.03841     82621.65    51255.067    4289.2679        82.12        82.12        82.12    1.2755844 
+    4400    300.37272    82719.356    51141.727    5149.8429        82.12        82.12        82.12    1.2755844 
+    4500    300.04807    82613.721     51086.45    4452.0931        82.12        82.12        82.12    1.2755844 
+    4600    300.00731    82493.657    51079.512    4849.2946        82.12        82.12        82.12    1.2755844 
+    4700    299.28984    82568.418    50957.354    4895.0542        82.12        82.12        82.12    1.2755844 
+    4800    299.76152    82864.926    51037.663    5139.2517        82.12        82.12        82.12    1.2755844 
+    4900      301.711    82799.571    51369.582    4724.5575        82.12        82.12        82.12    1.2755844 
+    5000    301.31182    82649.922    51301.619    5408.3208        82.12        82.12        82.12    1.2755844 
+    5100    299.88804     82541.76    51059.204    5424.5895        82.12        82.12        82.12    1.2755844 
+    5200     300.4335    82316.396    51152.074    5417.8468        82.12        82.12        82.12    1.2755844 
+    5300    300.56993    82384.927    51175.304    4781.4473        82.12        82.12        82.12    1.2755844 
+    5400    301.62629    82682.099     51355.16    5004.6628        82.12        82.12        82.12    1.2755844 
+    5500    301.88634    82729.675    51399.437    4860.6902        82.12        82.12        82.12    1.2755844 
+    5600    301.91253    82505.313    51403.896    4566.3749        82.12        82.12        82.12    1.2755844 
+    5700    300.99145    82454.364    51247.073    4194.0509        82.12        82.12        82.12    1.2755844 
+    5800    300.21839    82482.605     51115.45    5062.4359        82.12        82.12        82.12    1.2755844 
+    5900     299.4869    82611.229    50990.906    5311.9052        82.12        82.12        82.12    1.2755844 
+    6000    299.43451     82777.88    50981.987    4912.8109        82.12        82.12        82.12    1.2755844 
+    6100    300.82592    83077.293    51218.888    4843.2039        82.12        82.12        82.12    1.2755844 
+    6200       301.47    82850.079    51328.551    4838.5043        82.12        82.12        82.12    1.2755844 
+    6300    300.29986    82664.397    51129.321     4410.901        82.12        82.12        82.12    1.2755844 
+    6400    299.18821    82696.476     50940.05    5115.3525        82.12        82.12        82.12    1.2755844 
+    6500    299.80646    82483.184    51045.315     5741.864        82.12        82.12        82.12    1.2755844 
+    6600    299.57787    82447.334    51006.394    4952.4879        82.12        82.12        82.12    1.2755844 
+    6700    298.60908    82772.566    50841.448    5226.7157        82.12        82.12        82.12    1.2755844 
+    6800    299.74975    82932.765     51035.66    5431.3199        82.12        82.12        82.12    1.2755844 
+    6900    301.03089    82814.305    51253.787    4946.7908        82.12        82.12        82.12    1.2755844 
+    7000    301.14283    82589.536    51272.847    5077.8619        82.12        82.12        82.12    1.2755844 
+    7100    299.36792    82468.277    50970.647    5271.4483        82.12        82.12        82.12    1.2755844 
+    7200    299.98789    82366.592    51076.204    5533.6018        82.12        82.12        82.12    1.2755844 
+    7300    298.75478    82773.637    50866.255    5031.9336        82.12        82.12        82.12    1.2755844 
+    7400    299.84188    82757.589    51051.346    4866.8097        82.12        82.12        82.12    1.2755844 
+    7500    300.88872    82722.498    51229.581    4725.0762        82.12        82.12        82.12    1.2755844 
+    7600    303.20147    82633.989    51623.353    5901.0414        82.12        82.12        82.12    1.2755844 
+    7700    302.42278    82659.889    51490.771     5179.665        82.12        82.12        82.12    1.2755844 
+    7800    299.71238    82687.052    51029.296    5269.2186        82.12        82.12        82.12    1.2755844 
+    7900    298.56254     82707.13    50833.523    4554.5073        82.12        82.12        82.12    1.2755844 
+    8000    298.77067    82669.874    50868.961    5271.7268        82.12        82.12        82.12    1.2755844 
+    8100    301.53754    82432.167     51340.05    5209.8784        82.12        82.12        82.12    1.2755844 
+    8200    301.81387    82727.485    51387.098    4674.2805        82.12        82.12        82.12    1.2755844 
+    8300    301.80209    82609.113    51385.093    4965.4692        82.12        82.12        82.12    1.2755844 
+    8400    299.73119    82545.907    51032.499    4735.1343        82.12        82.12        82.12    1.2755844 
+    8500    300.38191    82402.641    51143.291    5154.0826        82.12        82.12        82.12    1.2755844 
+    8600    299.48353    82587.614    50990.332    5186.9342        82.12        82.12        82.12    1.2755844 
+    8700    299.81549    82728.703    51046.851    5450.2819        82.12        82.12        82.12    1.2755844 
+    8800    300.48135    82875.782    51160.222    5120.4658        82.12        82.12        82.12    1.2755844 
+    8900    301.03045    82747.838    51253.713    5429.4791        82.12        82.12        82.12    1.2755844 
+    9000    298.92692    82610.216    50895.564    5123.6392        82.12        82.12        82.12    1.2755844 
+    9100    299.68621     82384.47    51024.841    4975.6016        82.12        82.12        82.12    1.2755844 
+    9200    299.21896    82668.302    50945.287    4687.0686        82.12        82.12        82.12    1.2755844 
+    9300    298.83977    82991.076    50880.724    4805.3502        82.12        82.12        82.12    1.2755844 
+    9400    300.32906    82796.339    51134.292    4978.3496        82.12        82.12        82.12    1.2755844 
+    9500    299.28215    82693.528    50956.045    4856.3978        82.12        82.12        82.12    1.2755844 
+    9600    299.16413    82376.686     50935.95     4697.674        82.12        82.12        82.12    1.2755844 
+    9700    299.86233    82390.702    51054.827    5262.7514        82.12        82.12        82.12    1.2755844 
+    9800    300.40213    82654.102    51146.734    5160.0261        82.12        82.12        82.12    1.2755844 
+    9900    302.10561    82497.074     51436.77    5243.7862        82.12        82.12        82.12    1.2755844 
+   10000    301.09275    82536.994    51264.319    5146.2042        82.12        82.12        82.12    1.2755844 
+Loop time of 436.298 on 8 procs for 10000 steps with 57120 atoms
+
+Performance: 1.980 ns/day, 12.119 hours/ns, 22.920 timesteps/s
+99.6% CPU use with 8 MPI tasks x no OpenMP threads
+
+MPI task timing breakdown:
+Section |  min time  |  avg time  |  max time  |%varavg| %total
+---------------------------------------------------------------
+Pair    | 255.1      | 264.04     | 272.33     |  38.4 | 60.52
+Bond    | 33.035     | 34.102     | 35.104     |  12.3 |  7.82
+Kspace  | 81.853     | 89.946     | 98.561     |  66.9 | 20.62
+Neigh   | 39.63      | 39.637     | 39.645     |   0.1 |  9.08
+Comm    | 6.2864     | 6.6045     | 6.8975     |   9.5 |  1.51
+Output  | 0.21074    | 0.21136    | 0.2155     |   0.3 |  0.05
+Modify  | 1.1256     | 1.1454     | 1.1667     |   1.0 |  0.26
+Other   |            | 0.6105     |            |       |  0.14
+
+Nlocal:        7140.00 ave        7211 max        7067 min
+Histogram: 1 1 1 0 1 0 1 1 1 1
+Nghost:        23886.0 ave       24041 max       23796 min
+Histogram: 3 0 0 2 0 1 1 0 0 1
+Neighs:    3.38670e+06 ave  3.4424e+06 max 3.33476e+06 min
+Histogram: 1 1 1 1 0 0 1 2 0 1
+
+Total # of neighbors = 27093560
+Ave neighs/atom = 474.32703
+Ave special neighs/atom = 12.579832
+Neighbor list builds = 491
+Dangerous builds = 0
+write_data  final.data
+System init for write_data ...
+PPPM initialization ...
+  using 12-bit tables for long-range coulomb (../kspace.cpp:340)
+  G vector (1/distance) = 0.18519603
+  grid = 20 20 20
+  stencil order = 5
+  estimated absolute RMS force accuracy = 0.037228537
+  estimated relative force accuracy = 0.00011211263
+  using double precision KISS FFT
+  3d grid and FFT values/proc = 3375 1200
+unfix f0
+Total wall time: 0:07:17

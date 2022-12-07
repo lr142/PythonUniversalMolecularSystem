@@ -1,0 +1,22 @@
+include "system.in.init"
+#read_data "system.data"
+read_data "stage1.data"
+include "system.in.settings"
+
+thermo_style custom step temp pe ke press lx ly lz density
+variable T equal 313
+variable S equal 50000
+velocity all create $T 12314
+
+
+fix 1 all rigid/nvt/small molecule temp $T $T 100
+#timestep 0.1
+#thermo 10
+#run 10000
+#write_data stage1.data
+dump d1 all custom 100 system.lammpstrj id mol type x y z vx vy vz ix iy iz
+timestep 1.0
+thermo 100
+run 10000
+unfix 1
+write_data equil.data

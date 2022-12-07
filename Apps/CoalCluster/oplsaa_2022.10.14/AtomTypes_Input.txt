@@ -33,6 +33,7 @@ C:83  {H H H H}  # CH4的C
 H:85  {C:80}     # 烷烃上的H
 H:85  {C:81}
 H:85  {C:82}
+H:85  {C:83}
 H:85  {C:84}
 C:86  {C{* *} C{* * *} C{* * *}} # 烯烃 R2-C=, must bond to two sp3 C and one sp2 C
 C:87  {H C{* *} C{* * *}} # 烯烃 RH-C=
