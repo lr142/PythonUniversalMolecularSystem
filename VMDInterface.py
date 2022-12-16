@@ -16,14 +16,13 @@ class VMDInterface:
 
     def Step1_Representations(self):
         # Adjust Colors for some elements
-        self.AddCommand("color	Element	C	gray")
-        self.AddCommand("color	Element	Al	magenta")
-        self.AddCommand("color	Element	Si	orange")
-        self.AddCommand("color	Element	Mg	green")
-        self.AddCommand("color	Element	Na	blue")
-        self.AddCommand("color	Element	K	purple")
-        self.AddCommand("color	Element	Cl	green")
-        self.AddCommand("#display cuedensity 0.0")  # Turn off depth cue if you like by uncommenting it
+        colors = {"C":"gray", "Al":"magenta", "Si":"orange", "Mg":"green", "Na":"blue", "K": "purple",
+                 "Cl":"green"}
+        for element in colors:
+            self.AddCommand("color	Element	{}	{}".format(element,colors[element]))
+            self.AddCommand("color	Name	{}	{}".format(element,colors[element]))
+
+        self.AddCommand("display cuedensity 0.0")  # Turn off depth cue if you like by uncommenting it
         self.AddCommand("display projection Orthographic")
         self.AddCommand("menu main on")
         self.AddCommand("mol modstyle 0 0 Licorice 0.300000 12.000000 12.000000")

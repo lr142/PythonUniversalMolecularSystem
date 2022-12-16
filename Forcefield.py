@@ -142,7 +142,7 @@ class Forcefield:
     atomTypeRecognition:AtomTypeRecognition # 原子类型自动识别器，从规则文件中构建
     forcefieldParameters: ForcefieldParameters # 所有的力场参数
     molecules: [ForcefieldMolecule] #力场中的所有分子
-    boundary : []  # 晶胞尺寸。与MolecularSystem中的boundary参数意义相同，可以是3*2，或3*3的形式。3*2指[[xlo,xhi],[ylo,yhi],[zlo,zhi]]
+    boundary : []  # 晶胞尺寸。与MolecularSystem中的boundary参数意义相同，必须是3*2的形式！3*2指[[xlo,xhi],[ylo,yhi],[zlo,zhi]]
     groupsInfo: [] # LAMMPS中的分组信息，目前仅存储字符串数组，直接写入LAMMPS中
     def __init__(self,name,atomtypesFilename,parametersFilename):
         # 从两个描述文件中构建力场。第1个是原子类型自动识别的规则文件，第2是力场参数描述文件
@@ -254,9 +254,10 @@ class Forcefield:
         # 第三步，构建 bonds, angles, dihedrals, impropers
         # 如果withBonds==False,这里就可以提前终止了。
         if not withBonds:
+            self.molecules.append(ffmol)
             return True
-        pg = PathGenerator(molecule.BondedMap()) # 路径生成器。
 
+        pg = PathGenerator(molecule.BondedMap()) # 路径生成器。
         # 这里使用统一的代码来实现键B、角A、二面角D、非正常二面角I的识别工作。
         # 变量BorAorD代表现在处理是的什么。2,3,4,5 对应B，A，D, I
         destinations = [None,None, ffmol.bonds, ffmol.angles, ffmol.dihedrals,ffmol.impropers]
@@ -323,6 +324,13 @@ class Forcefield:
                     item.atoms_numbers = [ find_gloable_number(mol,iAtom) for iAtom in item.atoms ]
                     item.number = global_number
                     global_number += 1
+
+    def TotalCharge(self):
+        q = 0.0
+        for mol in self.molecules:
+            for atom in mol.atoms:
+                q += atom.charge
+        return q
 
     def Show(self):
         for mol in self.molecules:

@@ -9,7 +9,7 @@ from XYZFile import *
 def BreakupMolecule(originalMolecule, atomBelongToNewMoleculeSerialMap):
     # This function breaks up a molecule and return a MolecularSystem.
     # If successful, a NEWLY CREATED MolecularSystem, along with newly created constituent Molecules
-    #    and Atoms shall be returned. Otherwise it returns None.
+    #    and Atoms shall be returned. Otherwise, it returns None.
     # The breakup scheme is 'atomBelongToNewMoleculeSerialMap', which maps each atom serial to a new molecule serial
     # Requirements:
     # 1. atom serials in the original molecule must be unique
@@ -264,10 +264,12 @@ def DuplicateSystemPeriodically(moleculerSystem,images):
         return False
 
     showProgress = False
-    if len(images) * moleculerSystem.AtomCount() > 10000:
+    if len(images) * moleculerSystem.NAtoms() > 10000:
         showProgress = True
     if showProgress:
         output("Duplicating system {} in {} periodic images...".format(moleculerSystem.name,len(images)))
+
+    totalAtoms = moleculerSystem.NAtoms()
 
     for i,img in enumerate(images):
 
@@ -289,7 +291,13 @@ def DuplicateSystemPeriodically(moleculerSystem,images):
 
         newMS = copyOfOriginalSystem.Copy()
         newMS.Translate(dx,dy,dz)
-        ExtendSystem(moleculerSystem, newMS)
+
+        # ExtendSystem(moleculerSystem, newMS) # it's slower to call ExtendSystem
+        newMS.RenumberAtomSerials(totalAtoms+1)
+        totalAtoms += newMS.NAtoms()
+        moleculerSystem.molecules.extend(newMS.molecules)
+        moleculerSystem.interMolecularBonds.extend(newMS.interMolecularBonds) # no further renumbering needed
+
 
     if showProgress:
         ProgressBar(1.0)
@@ -311,7 +319,7 @@ def SubSystemByMask(molecularSystem,mask):
     # the sub-system will produce an unreadable format by some file writers, i.e. MOL2File(). The users must call
     # RenumberAtomSerials() on the sub-system before writing out the sub-structure in such formats.
     ms = molecularSystem.Copy()
-    NAtoms = ms.AtomCount()
+    NAtoms = ms.NAtoms()
     if len(mask) != NAtoms:
         error("In SubSystemByMask(ms,mask), the length of mask ({}) must equal NAtoms ({})".format(len(mask),NAtoms))
         return None
@@ -357,7 +365,7 @@ def SubSystemBySystemwideSerials(molecularSystem,surviving_atoms_by_systemwideSe
     # See the explanation in SubSystemByMask(). This function is similar except that a list of surviving atoms instead
     # of a list of masks are provided.
     # This function is implemented via SubSystemByMask()
-    mask = [False] * molecularSystem.AtomCount()
+    mask = [False] * molecularSystem.NAtoms()
     surviving_set = set(surviving_atoms_by_systemwideSerials)
     index = 0
     for m in molecularSystem.molecules:
@@ -369,7 +377,7 @@ def SubSystemBySystemwideSerials(molecularSystem,surviving_atoms_by_systemwideSe
 
 def SubSystemByLambdaFunction(ms,lamdafunc):
     # lamdafunc is a lambda function lambda: mol, atom which return either True or False
-    mask = [False] * ms.AtomCount()
+    mask = [False] * ms.NAtoms()
     index = 0
     for m in ms.molecules:
         for a in m.atoms:

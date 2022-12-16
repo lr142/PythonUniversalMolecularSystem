@@ -168,6 +168,7 @@ class LAMMPSDATAFile(MolecularFile):
                         bond.atom2 = b_to
                         molecularSystem.interMolecularBonds.append(bond)
                 i += 1
+            return i
 
         def __Read_Boundary(i):
             # Assuming Orthogonal Box, and only read in size and origin of the box

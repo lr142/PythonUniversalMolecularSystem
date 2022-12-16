@@ -99,13 +99,16 @@ class Molecule:
     resName: str
     resSeq: str
 
-    def __init__(self):
+    def __init__(self,name=None):
         self.atoms = []
         self.bonds = []
-        self.name = None  # name 用户定义的标识符，不需要唯一
+        self.name = name  # name 用户定义的标识符，不需要唯一
         self.serial = None # 序列号通常从 1 开始，在 MolecularSystem 中必须是唯一的。
         self.type = None #
         self.chainID = self.resName = self.resSeq = None #此三个属性只对蛋白质有效，它们可以在读取PBD文件时被写入
+
+    def NAtoms(self):
+        return len(self.atoms)
 
     # 一个旧版本的，检测分子内成键情况的函数。低效 O(n^2),已移除，被MolecularSystem::AutoDetectBonds取代
     # def FindBonds(self,rules):
@@ -283,13 +286,9 @@ class Trajectory:
 class MolecularSystem:
     # MolecularSystem是Molecule的集合，在某些情况下，还包括边界信息，体系性质及其它一些用以加速程序的辅助数据结构。
     molecules: [Molecule] # 体系中包含的所有Molecule
-    boundary: [] # 边界条件。非周期性体系可设为None。对周期性系，可以使用以下两种惯例之一：
-    # 1. 设为3x3的矩阵，代表u,v,w三个lattice向量。此惯例可以处理非Orthogonal的晶胞
-    # 2. 对orthogonal体系，特别是用于LAMMPS时，使用3x2矩阵，代表[[xlo,xhigh],[ylo,yhigh],[zlo,zhigh]]. 这种方式也是LAMMPSDATAFile
-    # 读取文件时采用的表示方式。
-    # 具体使用哪种惯例依调用者的需要而定。
+    boundary: [] # PBC边界条件。非周期性体系可设为None。对周期性系，设为3x3的矩阵，代表u,v,w三个lattice向量。
+    origin: [] # 体系原点。默认是在[0,0,0]
 
-    origin: [] # 体系原点。一般不需要，设为None即可。需要时可用一个三维向量记录原点位置。
     interMolecularBonds: [Bond] # Bond的list，记录分子间的Bond（这些Bond不属于任何一个Molecule）
     name: str # 体系名字
     trajectory: Trajectory # 体系的演化轨迹（如有）
@@ -301,7 +300,7 @@ class MolecularSystem:
     def __init__(self,name=None):
         self.molecules = []
         self.boundary = None
-        self.origin = None
+        self.origin = [0.0, 0.0, 0.0]
         self.interMolecularBonds = []
         self.name = name
         self.trajectory = None
@@ -337,6 +336,17 @@ class MolecularSystem:
         self.trajectory.Read(TrajectoryFile,filename,max_workers=max_workers,
                              maxFrames=maxFrames,every=every,flushSameTimestep=flushSameTimestep,certainFrames=certainFrames)
 
+    # 仅对正交体系：此函数返回体系在x,y,z方向上的界限，为3x2数组。例如用在LAMMPS的边界条件中
+    def LoHi(self):
+        if self.boundary == None or self.origin == None:
+            return None
+        else:
+            return [   [self.origin[i], self.origin[i]+self.boundary[i][i]] for i in range(3) ]
+    # 仅对正交体系：返回体系在x，y，z方向上的尺寸。
+    def Size(self):
+        if self.boundary == None or self.origin == None:
+            return None
+        return [self.boundary[i][i] for i in range(3)]
 
     def Write(self,molecularFile):
         molecularFile.Write(self)
@@ -361,7 +371,7 @@ class MolecularSystem:
         newMS.trajectory = self.trajectory.Copy()
         return newMS
 
-    def AtomCount(self):
+    def NAtoms(self):
         atomCount = 0
         for m in self.molecules:
             atomCount += len(m.atoms)
@@ -414,7 +424,7 @@ class MolecularSystem:
                 a.Translate(dx,dy,dz)
 
     def Rotate(self, clockwise_degree, axis): # rotate around a axis. For rotation around x, give axis as [1,0,0])
-        original = np.mat(np.zeros((self.AtomCount(),3)))
+        original = np.mat(np.zeros((self.NAtoms(), 3)))
         index = 0
         for mol in self.molecules:
             for atom in mol.atoms:
@@ -459,5 +469,5 @@ class MolecularSystem:
         for m in self.molecules:
             bondCount += len(m.bonds)
             #m.Summary()
-        output("MolecularSystem {} has {} molecules, {} atoms, {} intra-molecular bonds, and {} inter-molecular bonds".format(
-            self.name,molCount,self.AtomCount(),bondCount,len(self.interMolecularBonds)))
+        output("MolecularSystem [{}] has {} molecules, {} atoms, {} intra-molecular bonds, and {} inter-molecular bonds".format(
+            self.name,molCount,self.NAtoms(),bondCount,len(self.interMolecularBonds)))

@@ -38,6 +38,9 @@ def __ReadAFrame__(contents:[str], NAtomsShouldBeThere:int,  serialToIndexMap:{}
     xcol = _index_of_keyword('x')
     ycol = _index_of_keyword('y')
     zcol = _index_of_keyword('z')
+    xucol = _index_of_keyword('xu')
+    yucol = _index_of_keyword('yu')
+    zucol = _index_of_keyword('zu')
     vxcol = _index_of_keyword('vx')
     vycol = _index_of_keyword('vy')
     vzcol = _index_of_keyword('vz')
@@ -52,9 +55,15 @@ def __ReadAFrame__(contents:[str], NAtomsShouldBeThere:int,  serialToIndexMap:{}
     ifForce = False if (fxcol == -1 or fycol == -1 or fzcol == -1) else True
 
     # The dump file must at least include id and x,y,z
-    if idcol == -1 or xcol == -1 or ycol == -1 or zcol == -1:
+    if idcol == -1 or (xcol == -1 and xucol==-1) or (ycol==-1 and yucol==-1) or (zcol==-1 and zucol==-1):
         error("The DUMP file must at least include atom id and x,y,z", False)
         return False
+    if xcol==-1 and xucol!=-1:
+        xcol = xucol
+    if ycol==-1 and yucol!=-1:
+        ycol = yucol
+    if zcol==-1 and zucol!=-1:
+        zcol = zucol
 
     list_ids = ["" for _ in range(NAtomsInThisFrame)]
     list_xyzs = np.zeros((NAtomsInThisFrame, 3))

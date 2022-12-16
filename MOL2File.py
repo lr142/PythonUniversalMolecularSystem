@@ -94,6 +94,7 @@ class MOL2File(MolecularFile):
                     error("Unexpect format in <" + str(self.filename) + "> \n{}".format(line))
                     return False
                 molecularSystem.boundary = [ [lx,0,0], [0,ly,0], [0,0,lz]]
+                molecularSystem.origin = [0,0,0]
             else:
                 pass
 

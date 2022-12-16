@@ -290,10 +290,10 @@ class BondRules(BondDetector):
         # Performs a 2-body scan.
         # For system contains more than 10^4 atoms, O(N^2) is not acceptable. A neighbor list is needed here.
         N = len(atomList)
-        if N > 10000:
+        if N > 100000:
             sys.stdout.write("Building NeighborList for system {} with grid size {} Å...".format(molecularSystem.name,self.globalCutoff))
         neighList = NeighborList(atomList,self.globalCutoff)
-        if N > 10000:
+        if N > 100000:
             sys.stdout.write("Done.\n")
             sys.stdout.write("Scanning for Bonds:\n")
 

@@ -25,7 +25,7 @@ def RecognizeFileType(filename):
         error("File <> with unknown extension. Can't open it. Sorry! ".format(filename))
     return reader
 
-def QuickOpenFile(filename):
+def QuickOpenFile(filename,withTiming=False):
     reader = RecognizeFileType(filename)
     if reader == None:
         return
@@ -35,7 +35,8 @@ def QuickOpenFile(filename):
     start = time.time()
     ms.AutoDetectBonds(DefaultBondRules(),flushCurrentBonds=True,periodicBoundary=None,max_workers=None,batch_size=5000)
     end = time.time()
-    output("Bond Detection Takes {} s.".format(end-start))
+    if withTiming:
+        output("Bond Detection Takes {} s.".format(end-start))
     return ms
 
 def QuickSaveFile(ms:MolecularSystem,filename:str):

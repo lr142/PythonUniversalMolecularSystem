@@ -108,6 +108,7 @@ def ReadMolecularStructureFromAXSDNodeTree(molecularSystem, rootNode):
                     v[j] = float(v[j])
                 import copy
                 molecularSystem.boundary[i] = copy.copy(v)
+            molecularSystem.origin = [0,0,0]
 
         else:
             pass
