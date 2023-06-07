@@ -127,3 +127,42 @@ class VMDInterface:
         if not dryrun:
             vmdProcess = subprocess.Popen(cmd)
             vmdProcess.wait()
+
+# Below is an example to draw complex graphics within VMD:
+# def DrawInVMDWithField(self,filename,label=None,traj:Trajectory=None,trajFileName:str=None):
+#     from VMDInterface import VMDInterface
+#     scriptFileName = "vmd.tcl" if label==None else "{}.tcl".format(label)
+#     vmd = VMDInterface(filename, autobonds=True,scriptFileName=scriptFileName)
+#     charges = ["{:.3f}".format(q) for q in self.Qs]
+#     vmd.AddCommand("mol modstyle 0 0 CPK 0.600000 0.200000 32.000000 27.000000")
+#
+#     if traj == None:
+#         vmd.AddLabels(range(self.NAtoms), charges, offset=[0.06, 0.06, 0.06])
+#         vmd.AddCommand("graphics 0 color red")
+#         vmd.AddCommand("graphics 0 materials on")
+#         for i in range(self.NAtoms):
+#             shell = (self.Shells[i] - self.Cores[i]) * 5.0 + self.Cores[i]
+#             vmd.AddCommand("graphics 0 sphere {{ {} {} {} }} radius {} resolution 30".format(
+#                 shell[0], shell[1], shell[2], self.Rs[i]
+#             ))
+#         vmd.AddCommand("graphics 0 material Transparent")
+#         vmd.AddCommand("mol new {}".format(filename))
+#         vmd.AddCommand("graphics 1 color red")
+#         vmd.AddCommand("graphics 1 materials on")
+#         vmd.AddCommand("graphics 1 material Opaque")
+#         EVector = self.fieldDirection * self.fieldStrength
+#         Tip = EVector + 0.25 * self.fieldDirection
+#         vmd.AddCommand("graphics 1 line {{ 0 0 0 }} {{ {} {} {} }} width 5 style solid".format(
+#             EVector[0], EVector[1], EVector[2]
+#         ))
+#         vmd.AddCommand("graphics 1 cone {{ {} {} {} }} {{ {} {} {} }} radius 0.05 resolution 30".format(
+#             EVector[0], EVector[1], EVector[2], Tip[0], Tip[1], Tip[2]
+#         ))
+#     else:
+#         vmd.AddLabels(range(self.NAtoms), np.arange(1,self.NAtoms+1), offset=[0.06, 0.06, 0.06])
+#         vmd.AddCommand("mol new {}".format(trajFileName))
+#         vmd.AddCommand("mol modcolor 0 1 Element")
+#         vmd.AddCommand("mol modstyle 0 1 CPK 1.00000 0.00000 32.000000 27.000000")
+#         vmd.AddCommand("mol modmaterial 0 1 Transparent")
+#
+#     vmd.Run(dryrun=True,vmdlocation=label)

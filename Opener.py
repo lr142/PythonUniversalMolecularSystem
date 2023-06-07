@@ -3,6 +3,7 @@ from PDBFile import *
 from XYZFile import *
 from XSDFile import *
 from LAMMPSDATAFile import *
+from VASPFile import *
 
 import MolecularManipulation
 from UniversalMolecularSystem import *
@@ -21,11 +22,13 @@ def RecognizeFileType(filename):
         reader = PDBFile()
     elif filename.endswith(".data"):
         reader = LAMMPSDATAFile()
+    elif filename.startswith("POSCAR") or filename.startswith("CONTCAR") or filename.upper().endswith("VASP"):
+        reader = VASPFile()
     else:
         error("File <> with unknown extension. Can't open it. Sorry! ".format(filename))
     return reader
 
-def QuickOpenFile(filename,withTiming=False):
+def QuickOpenFile(filename,withTiming=False,detectBond=True):
     reader = RecognizeFileType(filename)
     if reader == None:
         return
@@ -33,7 +36,8 @@ def QuickOpenFile(filename,withTiming=False):
     ms.Read(reader,filename)
     import time
     start = time.time()
-    ms.AutoDetectBonds(DefaultBondRules(),flushCurrentBonds=True,periodicBoundary=None,max_workers=None,batch_size=5000)
+    if detectBond:
+        ms.AutoDetectBonds(DefaultBondRules(),flushCurrentBonds=True,periodicBoundary=None,max_workers=None,batch_size=5000)
     end = time.time()
     if withTiming:
         output("Bond Detection Takes {} s.".format(end-start))
