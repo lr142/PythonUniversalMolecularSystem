@@ -12,6 +12,7 @@ from BondDetection import *
 
 def RecognizeFileType(filename):
     reader = None
+    filename = filename.lower()
     if filename.endswith(".xyz"):
         reader = XYZFile()
     elif filename.endswith(".mol2"):
@@ -22,10 +23,10 @@ def RecognizeFileType(filename):
         reader = PDBFile()
     elif filename.endswith(".data"):
         reader = LAMMPSDATAFile()
-    elif filename.startswith("POSCAR") or filename.startswith("CONTCAR") or filename.upper().endswith("VASP"):
+    elif filename.find("poscar")!=-1 or filename.find("contcar")!=-1 or filename.find("vasp")!=-1: # This rule has lower priority
         reader = VASPFile()
     else:
-        error("File <> with unknown extension. Can't open it. Sorry! ".format(filename))
+        error("File <{}> with unknown extension. Can't open it. Sorry! ".format(filename))
     return reader
 
 def QuickOpenFile(filename,withTiming=False,detectBond=True):
