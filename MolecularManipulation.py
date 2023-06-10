@@ -471,6 +471,68 @@ def SolvateSystem(ms, region, type, minDistance=3.0):
     else:
         return None
 
+def SystemCenter(ms):
+    # return the geometric center of the ms
+    coords = np.zeros((ms.NAtoms(),3))
+    for iAtom, atom in enumerate(ms.Atoms()):
+        coords[iAtom,:] = atom.x,atom.y,atom.z
+    center = np.sum(coords,axis=0)
+    center /= ms.NAtoms()
+    return center
 
+def SystemFitPlane(ms):
+    # Fit the ms into a plane, return the normal direction (Z) in a unit vector
+    NAtoms = ms.NAtoms()
+    A = np.ones((NAtoms, 3))
+    B = np.zeros((NAtoms, 1))
+    for i, atom in enumerate(ms.Atoms()):
+        A[i, 0] = atom.x
+        A[i, 1] = atom.y
+        B[i, 0] = atom.z
+    A = np.matrix(A)
+    B = np.matrix(B)
+    X = (A.T * A).I * A.T * B  # ax+by+c = z, normal direction in [-a,-b,1]
+    normalDirection = np.array([-X[0, 0], -X[1, 0], 1])
+    normalDirection /= np.sqrt(np.dot(normalDirection, normalDirection))
+    return normalDirection
 
+def SystemFitLine(ms):
+    # Fit the system with a line: L = A + N t; where L is the points, A is the interception, N is normal direction,
+    # t is the parameter
+    # A is simply the average coordinates of (xi, yi, zi)
+    A = SystemCenter(ms)
+    # N is the eigenvector of the covariance matrix corresponding to the largest eigenvector:
+    # cov(x,y,z) = [ [<x^2>-<x>^2, <xy>-<x><y>, <xz>-<x><z>],
+    #                [<xy>-<x><y>, <y^2>-<y>^2, <yz>-<y><z>],
+    #                [<xz>-<x><z>, <yz>-<y><z>, <z^2>-<z>^2] ]
+    NAtoms = ms.NAtoms()
+    X = np.zeros(NAtoms)
+    Y = np.zeros(NAtoms)
+    Z = np.zeros(NAtoms)
+    for iAtom, atom in enumerate(ms.Atoms()):
+        X[iAtom], Y[iAtom], Z[iAtom] = atom.x, atom.y, atom.z
+    cov = np.zeros((3,3))
+    xmean = np.average(X)
+    ymean = np.average(Y)
+    zmean = np.average(Z)
 
+    cov[0,0] = np.average(X*X) - xmean*xmean
+    cov[0,1] = cov[1,0] = np.average(X*Y) - xmean*ymean
+    cov[0,2] = cov[2,0] = np.average(X*Z) - xmean*zmean
+    cov[1,1] = np.average(Y*Y) - ymean*ymean
+    cov[1,2] = cov[2,1] = np.average(Y*Z) - ymean*zmean
+    cov[2,2] = np.average(Z*Z) - zmean*zmean
+    eigenvalues,eigenvectors = np.linalg.eig(cov)
+    eigenvalues = np.fabs(eigenvalues)
+    maxEigenvalue = -9999
+    maxEigIndex = -1
+    # print(eigenvalues)
+    # print(eigenvectors)
+    # exit()
+    for i, e in enumerate(eigenvalues):
+        if e > maxEigenvalue:
+            maxEigIndex = i
+            maxEigenvalue = e
+    N = eigenvectors[:,maxEigIndex]
+    N /= np.sqrt(np.dot(N,N))
+    return N,A
