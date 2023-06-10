@@ -505,6 +505,7 @@ def SystemFitPlane(ms,excluded_set=set()):
     normalDirection /= np.sqrt(np.dot(normalDirection, normalDirection))
     return normalDirection
 
+
 def SystemFitLine(ms,excluded_set=set()):
     # Fit the system with a line: L = A + N t; where L is the points, A is the interception, N is normal direction,
     # t is the parameter
