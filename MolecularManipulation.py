@@ -471,36 +471,44 @@ def SolvateSystem(ms, region, type, minDistance=3.0):
     else:
         return None
 
-def SystemCenter(ms):
+def SystemCenter(ms,excluded_set=set()):
     # return the geometric center of the ms
+    # if excluded_set is not empty set, atoms in the excluded_set are excluded (for example, light atoms)
     coords = np.zeros((ms.NAtoms(),3))
+    counter = 0
     for iAtom, atom in enumerate(ms.Atoms()):
-        coords[iAtom,:] = atom.x,atom.y,atom.z
+        if not iAtom in excluded_set:
+            coords[counter,:] = atom.x,atom.y,atom.z
+            counter += 1
+    coords = coords[:counter,:]
     center = np.sum(coords,axis=0)
-    center /= ms.NAtoms()
+    center /= counter
     return center
 
-def SystemFitPlane(ms):
+def SystemFitPlane(ms,excluded_set=set()):
     # Fit the ms into a plane, return the normal direction (Z) in a unit vector
     NAtoms = ms.NAtoms()
-    A = np.ones((NAtoms, 3))
-    B = np.zeros((NAtoms, 1))
+    A = np.ones((NAtoms,3))
+    B = np.zeros((NAtoms,1))
+    counter = 0
     for i, atom in enumerate(ms.Atoms()):
-        A[i, 0] = atom.x
-        A[i, 1] = atom.y
-        B[i, 0] = atom.z
-    A = np.matrix(A)
-    B = np.matrix(B)
+        if i in excluded_set:
+            continue
+        A[counter, 0] = atom.x
+        A[counter, 1] = atom.y
+        B[counter, 0] = atom.z
+        counter += 1
+    A = np.matrix(A[:counter,:])
+    B = np.matrix(B[:counter,:])
     X = (A.T * A).I * A.T * B  # ax+by+c = z, normal direction in [-a,-b,1]
     normalDirection = np.array([-X[0, 0], -X[1, 0], 1])
     normalDirection /= np.sqrt(np.dot(normalDirection, normalDirection))
     return normalDirection
 
-def SystemFitLine(ms):
+def SystemFitLine(ms,excluded_set=set()):
     # Fit the system with a line: L = A + N t; where L is the points, A is the interception, N is normal direction,
     # t is the parameter
     # A is simply the average coordinates of (xi, yi, zi)
-    A = SystemCenter(ms)
     # N is the eigenvector of the covariance matrix corresponding to the largest eigenvector:
     # cov(x,y,z) = [ [<x^2>-<x>^2, <xy>-<x><y>, <xz>-<x><z>],
     #                [<xy>-<x><y>, <y^2>-<y>^2, <yz>-<y><z>],
@@ -509,9 +517,14 @@ def SystemFitLine(ms):
     X = np.zeros(NAtoms)
     Y = np.zeros(NAtoms)
     Z = np.zeros(NAtoms)
+    counter = 0
     for iAtom, atom in enumerate(ms.Atoms()):
-        X[iAtom], Y[iAtom], Z[iAtom] = atom.x, atom.y, atom.z
+        if iAtom in excluded_set:
+            continue
+        X[counter], Y[counter], Z[counter] = atom.x, atom.y, atom.z
+        counter += 1
     cov = np.zeros((3,3))
+    X,Y,Z = X[:counter], Y[:counter], Z[:counter]
     xmean = np.average(X)
     ymean = np.average(Y)
     zmean = np.average(Z)
@@ -535,4 +548,4 @@ def SystemFitLine(ms):
             maxEigenvalue = e
     N = eigenvectors[:,maxEigIndex]
     N /= np.sqrt(np.dot(N,N))
-    return N,A
+    return N
