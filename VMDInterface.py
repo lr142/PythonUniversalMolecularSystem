@@ -60,11 +60,12 @@ class VMDInterface:
             offset = "{0.03 0.03 0.03}"
         else:
             offset = "{{ {} {} {} }}".format(offset[0], offset[1], offset[2])
-
+        counter = 0
         for index,label in zip(indexes,labels):
             self.AddCommand("label add Atoms 0/{}".format(index))
-            self.AddCommand("label textoffset Atoms {} {}".format(index,offset))
-            self.AddCommand("label textformat Atoms {} {{ {} }}".format(index,label))
+            self.AddCommand("label textoffset Atoms {} {}".format(counter,offset))
+            self.AddCommand("label textformat Atoms {} {{ {} }}".format(counter,label))
+            counter+=1
 
 
 
