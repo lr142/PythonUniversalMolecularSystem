@@ -243,10 +243,11 @@ class BondRules(BondDetector):
         systemwideSerialToMoleculeMap = {}
         atomList = []
         tempBondList = []
-
+        # The molecularSystem must have consistent numbering of atoms (systemwideSerial)
+        molecularSystem.RenumberAtomSerials()
+        # If flush current bonds, then erase all ...
         if flushCurrentBonds:
             molecularSystem.interMolecularBonds = []
-
         for m in molecularSystem.molecules:
             if flushCurrentBonds:
                 m.bonds = []
@@ -347,17 +348,21 @@ class BondRules(BondDetector):
                 existingBonds.add(key1)
                 existingBonds.add(key2)
 
-
-
         totalBonds = len(tempBondList)
         actuallyAddedBonds = 0
-
         for bond in tempBondList:
-            if not flushCurrentBonds:
-                key = '{}-{}'.format(bond.atom1, bond.atom2)
-                if key in existingBonds:
-                    continue
-
+            # See if the current bond is already added. This includes:
+            # 1. The flushCurrentBonds is False and the newly founded bond is already present in the original
+            #    Molecular System, or
+            # 2. The flushCurrentBonds is True, but this same bond appears in the tempBondList for more than
+            #    one times. This is possible in periodic unit cells with small size compared to buffer size
+            key1 = '{}-{}'.format(bond.atom1, bond.atom2)
+            key2 = '{}-{}'.format(bond.atom2, bond.atom1)
+            if key1 in existingBonds or key2 in existingBonds:
+                continue
+            else:
+                existingBonds.add(key1)
+                existingBonds.add(key2)
             a1 = systemwideSerialToAtomMap[bond.atom1]
             a2 = systemwideSerialToAtomMap[bond.atom2]
             m1 = systemwideSerialToMoleculeMap[bond.atom1]
@@ -368,12 +373,9 @@ class BondRules(BondDetector):
                 m1.bonds.append(bond)
             else: # Intramolecular bonds
                 molecularSystem.interMolecularBonds.append(bond)
-
             actuallyAddedBonds += 1
-
         # For debugging:
         #output('Totally {} bonds found, {} bonds are added.'.format(totalBonds,actuallyAddedBonds))
-
         return True
 
     def Extend(self,file_name_or_another_rules_set):
