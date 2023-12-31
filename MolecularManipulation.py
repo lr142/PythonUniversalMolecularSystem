@@ -498,12 +498,26 @@ def SystemFitPlane(ms,excluded_set=set()):
         A[counter, 1] = atom.y
         B[counter, 0] = atom.z
         counter += 1
-    A = np.matrix(A[:counter,:])
-    B = np.matrix(B[:counter,:])
-    X = (A.T * A).I * A.T * B  # ax+by+c = z, normal direction in [-a,-b,1]
-    normalDirection = np.array([-X[0, 0], -X[1, 0], 1])
-    normalDirection /= np.sqrt(np.dot(normalDirection, normalDirection))
-    return normalDirection
+    # Special Cases:
+    # 1. Only one atom, just return Z-direction
+    # 2. Two atoms, return the direction (1->2) x [0,0,1], if (1->2) happens to be along z-direction, return [1,0,0]
+    # 3. 3+ noncollinear atoms, just do the math
+    if counter == 1:
+        return np.array([0,0,1])
+    elif counter == 2:
+        X = SystemFitLine(ms,excluded_set)
+        Z = VectorCrossProduct(X,[0,0,1])
+        if VectorNorm(Z) < 1e-8: # means X is along [0,0,1]
+            return np.array([1,0,0])
+        else:
+            return np.array(Z)
+    else:
+        A = np.matrix(A[:counter,:])
+        B = np.matrix(B[:counter,:])
+        X = (A.T * A).I * A.T * B  # ax+by+c = z, normal direction in [-a,-b,1]
+        normalDirection = np.array([-X[0, 0], -X[1, 0], 1])
+        normalDirection /= np.sqrt(np.dot(normalDirection, normalDirection))
+        return normalDirection
 
 
 def SystemFitLine(ms,excluded_set=set()):
@@ -549,4 +563,15 @@ def SystemFitLine(ms,excluded_set=set()):
             maxEigenvalue = e
     N = eigenvectors[:,maxEigIndex]
     N /= np.sqrt(np.dot(N,N))
+    # There are two choices (left/right) for the X-direction.
+    # Make this choice definite by make the atom with smaller indicies on the left, atoms with larger indices on the
+    # right
+    sum = 0.0
+    for i in range(counter):
+        weight = i - counter/2.0
+        dir = np.array([X[i],Y[i],Z[i]]) - np.array([xmean,ymean,zmean])
+        sum += np.dot(dir,N) * weight
+    if sum < 0.0:
+        N = -N
+
     return N
